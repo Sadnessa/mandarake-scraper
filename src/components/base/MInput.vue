@@ -1,0 +1,29 @@
+<template>
+  <input class="inpt" :placeholder="ph" />
+</template>
+
+<script>
+export default {
+  props: {
+    ph: {
+      type: String,
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+.inpt {
+  @apply bg-neutral-300;
+  @apply px-2 py-3 box-border rounded-lg;
+  @apply font-bold text-xs;
+
+  &:focus {
+    @apply outline-dashed outline-2 outline-purple-500;
+  }
+
+  &::placeholder {
+    @apply text-neutral-500;
+  }
+}
+</style>
