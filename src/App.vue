@@ -1,14 +1,11 @@
 <template>
-<router-view></router-view>
+  <router-view></router-view>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700");
+
+  * {
+    font-family: "Roboto", sans-serif;
+  }
 </style>

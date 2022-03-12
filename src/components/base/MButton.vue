@@ -1,5 +1,7 @@
 <template>
-  <button :class="compClass">УЪУ</button>
+  <button :class="compClass" :disabled="disabled">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -26,14 +28,14 @@ export default {
 
 <style lang="scss" scoped>
 .btn {
-  @apply transition-colors duration-300 hover:bg-purple-400 bg-purple-500 px-3 py-2 rounded-md text-white;
+  @apply transition-colors duration-300 hover:bg-purple-400 bg-purple-500 px-3 py-2 rounded-md text-white font-bold text-sm;
 
   &--small {
     @apply px-3 py-1;
   }
 
   &--large {
-    @apply px-5 py-2;
+    @apply px-6 py-2;
   }
 
   &--disabled {
