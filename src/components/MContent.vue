@@ -7,17 +7,22 @@
         <MButton size="large" disabled>Add link</MButton>
       </div>
     </div>
+    <div class="cards-sec">
+      <MCard></MCard>
+    </div>
   </div>
 </template>
 
 <script>
 import MButton from "./base/MButton.vue";
 import MInput from "./base/MInput.vue";
+import MCard from "./MCard.vue";
 
 export default {
   components: {
     MButton,
     MInput,
+    MCard,
   },
 };
 </script>
