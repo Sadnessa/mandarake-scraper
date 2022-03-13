@@ -41,7 +41,7 @@ export default {
 
     .col {
       * {
-        @apply mr-3;
+        @apply mr-2;
 
         &:last-child {
           @apply mr-0;
