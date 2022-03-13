@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1 class="title">Welcome, user</h1>
+    <h1>Welcome, user</h1>
     <div class="btns-col">
       <MButton>Login</MButton>
       <MButton>Sign up</MButton>
@@ -24,7 +24,7 @@ export default {
   @apply py-5 px-8 rounded-b-2xl;
   @apply shadow;
 
-  .title {
+  h1 {
     @apply flex items-center;
     @apply font-bold text-3xl;
   }
