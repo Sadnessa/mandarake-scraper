@@ -15,7 +15,7 @@ export default {
 <style lang="scss" scoped>
 .inpt {
   @apply bg-neutral-300;
-  @apply px-2 py-3 box-border rounded-lg;
+  @apply px-3 py-3 box-border rounded-lg;
   @apply font-bold text-xs;
 
   &:focus {
