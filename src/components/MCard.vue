@@ -8,8 +8,8 @@
       <div class="rows__bottom">
         <p>Price</p>
         <div class="btns-col">
-          <MButton>Пук</MButton>
-          <MButton>Пук</MButton>
+          <MButton size="small">View log</MButton>
+          <MButton size="small">Delete</MButton>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@ export default {
 
   .rows {
     @apply flex flex-col;
-    
+
     &__top {
       @apply flex flex-row justify-between items-center;
       @apply my-2.5 mx-0.5;
@@ -43,6 +43,16 @@ export default {
     &__bottom {
       @apply flex flex-row justify-between items-center;
       @apply my-2.5 mx-0.5;
+
+      .btns-col {
+        * {
+          @apply mr-1;
+
+          &:last-child {
+            @apply mr-0;
+          }
+        }
+      }
     }
   }
 }
