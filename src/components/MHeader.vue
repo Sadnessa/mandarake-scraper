@@ -30,8 +30,12 @@ export default {
   }
 
   .btns-col {
-    .btn:first-child {
-      @apply mr-2;
+    * {
+      @apply mr-1;
+
+      &:last-child {
+        @apply mr-0;
+      }
     }
   }
 }
