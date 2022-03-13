@@ -1,21 +1,16 @@
 <template>
     <MHeader></MHeader>
-    <MButton size="large" disabled>УЪУ</MButton>
-    <MButton size="small">Delete</MButton>
-    <MInput placeholder="Paste link here"></MInput>
-
+    <MContent></MContent>
 </template>
 
 <script>
-import MButton from "../components/base/MButton.vue";
-import MInput from "../components/base/MInput.vue";
 import MHeader from "../components/MHeader.vue";
+import MContent from "../components/MContent.vue";
 
 export default {
   components: {
-    MButton,
-    MInput,
     MHeader,
+    MContent,
   },
 };
 </script>
