@@ -1,11 +1,11 @@
 <template>
-  <input class="inpt" :placeholder="ph" />
+  <input class="inpt" :placeholder="placeholder" />
 </template>
 
 <script>
 export default {
   props: {
-    ph: {
+    placeholder: {
       type: String,
     },
   },
