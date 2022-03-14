@@ -10,6 +10,7 @@
 
 <script>
 import MButton from "./base/MButton.vue";
+
 export default {
   components: {
     MButton,
@@ -31,7 +32,7 @@ export default {
 
   .btns-col {
     * {
-      @apply mr-1;
+      @apply mr-1.5;
 
       &:last-child {
         @apply mr-0;
