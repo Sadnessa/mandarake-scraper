@@ -8,7 +8,13 @@
       </div>
     </div>
     <div class="cards-sec">
-      <MCard></MCard>
+      <MCard
+        v-for="card in cards"
+        :key="card"
+        :date="card.date"
+        :price="card.price"
+        :title="card.title"
+      ></MCard>
     </div>
   </div>
 </template>
@@ -23,6 +29,24 @@ export default {
     MButton,
     MInput,
     MCard,
+  },
+
+  data() {
+    return {
+      cards: [
+        {
+          title: "Mandarake",
+          price: "4000",
+          date: "20 JUN 2021",
+        },
+
+        {
+          title: "Ыыы",
+          price: "4000",
+          date: "20 JUN 2021",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -48,6 +72,10 @@ export default {
         }
       }
     }
+  }
+
+  .card {
+    @apply mb-4;
   }
 }
 </style>

@@ -2,11 +2,11 @@
   <div class="card">
     <div class="rows">
       <div class="rows__top">
-        <h1>Good name</h1>
-        <p>27 jun 2022</p>
+        <h1> {{ title }}</h1>
+        <p> {{ date }} </p>
       </div>
       <div class="rows__bottom">
-        <p>4000 rub</p>
+        <p> {{ price }} </p>
         <div class="btns-col">
           <MButton size="small">View log</MButton>
           <MButton size="small">Delete</MButton>
@@ -22,6 +22,20 @@ import MButton from "./base/MButton.vue";
 export default {
   components: {
     MButton,
+  },
+
+  props: {
+    title: {
+      type: String,
+    },
+
+    date: {
+      type: String,
+    },
+
+    price: {
+      type: String,
+    }
   },
 };
 </script>
@@ -45,7 +59,7 @@ export default {
       }
 
       p {
-        @apply text-neutral-500; 
+        @apply text-neutral-500;
         @apply text-base uppercase;
       }
     }
@@ -53,15 +67,15 @@ export default {
     &__bottom {
       @apply flex flex-row justify-between items-center;
       @apply my-2.5 mx-0.5;
+      @apply py-2;
 
       p {
         @apply text-xl;
-        @apply py-2; 
       }
 
       .btns-col {
         * {
-          @apply mr-1;
+          @apply mr-1.5;
 
           &:last-child {
             @apply mr-0;
