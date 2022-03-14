@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  @apply px-20;
+  @apply px-28;
 
   .search-sec {
     @apply flex justify-between items-center;
