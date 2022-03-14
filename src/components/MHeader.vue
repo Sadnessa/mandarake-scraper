@@ -2,7 +2,9 @@
   <div class="header">
     <h1>Welcome, user</h1>
     <div class="btns-col">
-      <MButton>Login</MButton>
+      <router-link to="/login">
+        <MButton>Login</MButton>
+      </router-link>
       <MButton>Sign up</MButton>
     </div>
   </div>
