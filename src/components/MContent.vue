@@ -76,6 +76,10 @@ export default {
 
   .card {
     @apply mb-4;
+
+    &:last-child {
+      @apply mb-0;
+    }
   }
 }
 </style>
