@@ -11,6 +11,6 @@
 
   body {
     @apply bg-neutral-200;
-    @apply px-60;
+    @apply px-60 box-border;
   }
 </style>
