@@ -1,5 +1,8 @@
 <template>
-  <MLoginCard></MLoginCard>
+  <div class="login">
+    <h1>Mandarake scraper</h1>
+    <MLoginCard></MLoginCard>
+  </div>
 </template>
 
 <script>
@@ -11,3 +14,14 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.login {
+  @apply h-screen;
+  @apply flex flex-col justify-center items-center;
+
+  h1 {
+    @apply font-bold text-4xl;
+  }
+}
+</style>
