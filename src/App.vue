@@ -9,8 +9,12 @@
     font-family: "Roboto", sans-serif;
   }
 
+  #app {
+    @apply container 2xl:px-44 px-2;
+  }
+
   body {
     @apply bg-neutral-200;
-    @apply px-60 box-border;
+    
   }
 </style>

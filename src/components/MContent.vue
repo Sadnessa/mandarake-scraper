@@ -53,14 +53,16 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  @apply px-28 box-border;
+  @apply container lg:px-36 px-2;
 
   .search-sec {
-    @apply flex justify-between items-center;
+    @apply flex items-center justify-between;
+    @apply flex-col sm:flex-row;
     @apply py-5;
 
     h1 {
       @apply font-bold text-3xl;
+      @apply sm:mb-0 mb-2.5;
     }
 
     .col {
