@@ -54,7 +54,7 @@ export default {
   .btns {
     @apply flex;
 
-    button {
+    & * {
       @apply w-full;
       @apply mr-1.5;
 
