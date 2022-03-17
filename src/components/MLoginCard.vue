@@ -7,7 +7,9 @@
     <MInput></MInput>
     <div class="btns">
       <MButton>Log in</MButton>
-      <MButton>Sign up</MButton>
+      <router-link to="/signup">
+        <MButton>Sign up</MButton>
+      </router-link>
     </div>
   </div>
 </template>

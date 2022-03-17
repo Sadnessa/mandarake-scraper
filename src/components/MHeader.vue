@@ -5,7 +5,9 @@
       <router-link to="/login">
         <MButton>Log in</MButton>
       </router-link>
-      <MButton>Sign up</MButton>
+      <router-link to="/signup">
+        <MButton>Sign up</MButton>
+      </router-link>
     </div>
   </div>
 </template>
