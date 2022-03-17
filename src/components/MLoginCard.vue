@@ -1,6 +1,9 @@
 <template>
   <div class="login-card">
-    <h1>Login</h1>
+    <p>Username</p>
+    <MInput placeholder="Username"></MInput>
+    <p>Password</p>
+    <MInput placeholder="Password"></MInput>
     <div class="btns">
       <MButton>dsds</MButton>
       <MButton>dsds</MButton>
@@ -22,7 +25,18 @@ export default {
 
 <style lang="scss" scoped>
 .login-card {
+  @apply flex flex-col;
+  @apply w-full max-w-sm;
   @apply bg-white;
-  @apply max-w-xl ;
+  @apply p-4;
+  @apply rounded-lg;
+
+  .inpt {
+    @apply mb-2;
+  }
+
+  .btns {
+    @apply flex justify-around;
+  }
 }
 </style>
