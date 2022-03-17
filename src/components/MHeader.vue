@@ -23,12 +23,11 @@ export default {
 <style lang="scss" scoped>
 .header {
   @apply bg-white;
-  @apply flex justify-between;
+  @apply flex justify-between items-center;
   @apply py-5 px-8 rounded-b-2xl;
   @apply shadow;
 
   h1 {
-    @apply flex items-center;
     @apply font-bold text-3xl;
   }
 
