@@ -1,26 +1,27 @@
 <template>
   <div class="login-card">
+    <h1>Log in</h1>
     <p>Username</p>
-    <MInput placeholder="Username"></MInput>
+    <MInput></MInput>
     <p>Password</p>
-    <MInput placeholder="Password"></MInput>
+    <MInput></MInput>
     <div class="btns">
-      <MButton>dsds</MButton>
-      <MButton>dsds</MButton>
+      <MButton>Log in</MButton>
+      <MButton>Sign up</MButton>
     </div>
   </div>
 </template>
 
 <script>
-import MButton from "./base/MButton.vue"
-import MInput from "./base/MInput.vue"
+import MButton from "./base/MButton.vue";
+import MInput from "./base/MInput.vue";
 
 export default {
   components: {
     MButton,
     MInput,
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -28,15 +29,37 @@ export default {
   @apply flex flex-col;
   @apply w-full max-w-sm;
   @apply bg-white;
-  @apply p-4;
+  @apply p-6;
+  @apply shadow;
   @apply rounded-lg;
 
+  h1 {
+    @apply border-b-2 border-dashed border-purple-500;
+    @apply mb-3 pb-2;
+    @apply font-bold text-lg text-center;
+  }
+
+  p {
+    @apply font-semibold text-xs;
+    @apply pb-1;
+    @apply text-neutral-500;
+  }
+
   .inpt {
-    @apply mb-2;
+    @apply mb-3;
   }
 
   .btns {
-    @apply flex justify-around;
+    @apply flex;
+
+    button {
+      @apply w-full;
+      @apply mr-1.5;
+
+      &:last-child {
+        @apply mr-0;
+      }
+    }
   }
 }
 </style>

@@ -22,6 +22,7 @@ export default {
 
   h1 {
     @apply font-bold text-4xl;
+    @apply mb-4;
   }
 }
 </style>
