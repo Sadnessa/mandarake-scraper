@@ -8,13 +8,13 @@
       </div>
     </div>
     <div class="cards-sec">
-      <MCard
+      <MItemCard
         v-for="card in cards"
         :key="card"
         :date="card.date"
         :price="card.price"
         :title="card.title"
-      ></MCard>
+      ></MItemCard>
     </div>
   </div>
 </template>
@@ -22,13 +22,13 @@
 <script>
 import MButton from "./base/MButton.vue";
 import MInput from "./base/MInput.vue";
-import MCard from "./MCard.vue";
+import MItemCard from "./MItemCard.vue";
 
 export default {
   components: {
     MButton,
     MInput,
-    MCard,
+    MItemCard,
   },
 
   data() {

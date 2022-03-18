@@ -1,5 +1,5 @@
 <template>
-  <div class="login-card">
+  <MCard>
     <h1>Log in</h1>
     <p>Username</p>
     <MInput></MInput>
@@ -11,29 +11,27 @@
         <MButton>Sign up</MButton>
       </router-link>
     </div>
-  </div>
+  </MCard>
 </template>
 
 <script>
 import MButton from "./base/MButton.vue";
 import MInput from "./base/MInput.vue";
+import MCard from "./base/MCard.vue";
 
 export default {
   components: {
     MButton,
     MInput,
+    MCard,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.login-card {
+.card {
   @apply flex flex-col;
-  @apply w-full max-w-sm;
-  @apply bg-white;
-  @apply p-6;
-  @apply shadow;
-  @apply rounded-lg;
+  @apply max-w-sm;
 
   h1 {
     @apply border-b-2 border-dashed border-purple-500;
