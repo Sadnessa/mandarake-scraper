@@ -51,6 +51,7 @@ export default {
 
   .btns {
     @apply flex;
+    @apply mt-2;
 
     & * {
       @apply w-full;
