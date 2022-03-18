@@ -1,6 +1,8 @@
 <template>
+  <div class="home">
     <MHeader></MHeader>
     <MContent></MContent>
+  </div>
 </template>
 
 <script>
