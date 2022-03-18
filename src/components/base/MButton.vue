@@ -12,15 +12,26 @@ export default {
       default: "medium",
     },
 
+    type: {
+      type: String,
+      default: "solid",
+      validator: (value) => ["solid", "flat"].includes(value),
+    },
+
     disabled: {
       type: Boolean,
       default: false,
-    }
+    },
   },
 
   computed: {
     compClass() {
-      return { btn: true, [`btn--${this.size}`]: true, "btn--disabled": this.disabled };
+      return {
+        btn: true,
+        [`btn--${this.size}`]: true,
+        [`btn--${this.type}`]: true,
+        "btn--disabled": this.disabled,
+      };
     },
   },
 };
@@ -29,10 +40,27 @@ export default {
 <style lang="scss" scoped>
 .btn {
   @apply transition-colors duration-300;
-  @apply hover:bg-purple-400 bg-purple-500;
   @apply px-4 py-2 rounded-md;
-  @apply text-white font-bold text-sm;
+  @apply font-bold text-sm;
 
+  //types
+  &--solid {
+    @apply bg-purple-500;
+    @apply text-white;
+
+    &:not(.btn--disabled) {
+      @apply hover:bg-purple-400
+    }
+  }
+
+  &--flat {
+    @apply bg-transparent;
+    @apply text-purple-500;
+    @apply hover:bg-purple-200;
+    @apply border-2 border-purple-400;
+  }
+
+  //sizes
   &--small {
     @apply px-3 py-1.5;
   }
@@ -41,8 +69,9 @@ export default {
     @apply px-6 py-2.5;
   }
 
+  //states
   &--disabled {
-    @apply opacity-50 hover:bg-purple-500
+    @apply opacity-50;
   }
 }
 </style>
