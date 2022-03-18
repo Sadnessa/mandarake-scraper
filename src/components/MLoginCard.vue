@@ -6,9 +6,11 @@
     <p>Password</p>
     <MInput></MInput>
     <div class="btns">
-      <MButton>Log in</MButton>
       <router-link to="/signup">
-        <MButton>Sign up</MButton>
+        <MButton type="flat">Sign up</MButton>
+      </router-link>
+      <router-link to="/">
+        <MButton>Log in</MButton>
       </router-link>
     </div>
   </MCard>

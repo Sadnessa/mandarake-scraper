@@ -16,9 +16,11 @@
 
     <div class="btns">
       <router-link to="/login">
-        <MButton>Log in</MButton>
+        <MButton type="flat">Log in</MButton>
       </router-link>
-      <MButton>Sign up</MButton>
+      <router-link to="/">
+        <MButton>Sign up</MButton>
+      </router-link>
     </div>
   </MCard>
 </template>
