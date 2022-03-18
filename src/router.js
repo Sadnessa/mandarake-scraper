@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
-import Signup from './views/Signup.vue'
+import Signup from './views/SignUp.vue'
 
 const routes = [
   {
