@@ -2,11 +2,11 @@
   <MCard>
     <h1>Welcome, user</h1>
     <div class="btns-col">
-      <router-link to="/login">
-        <MButton>Log in</MButton>
-      </router-link>
       <router-link to="/signup">
         <MButton type="flat">Sign up</MButton>
+      </router-link>
+      <router-link to="/login">
+        <MButton>Log in</MButton>
       </router-link>
     </div>
   </MCard>
