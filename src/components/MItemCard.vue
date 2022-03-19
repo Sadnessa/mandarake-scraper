@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <MCard>
     <div class="rows">
       <div class="rows__top">
         <h1> {{ title }}</h1>
@@ -13,15 +13,17 @@
         </div>
       </div>
     </div>
-  </div>
+  </MCard>
 </template>
 
 <script>
 import MButton from "./base/MButton.vue";
+import MCard from "./base/MCard.vue";
 
 export default {
   components: {
     MButton,
+    MCard,
   },
 
   props: {
@@ -43,9 +45,6 @@ export default {
 <style lang="scss" scoped>
 .card {
   @apply py-2 px-6;
-  @apply bg-white;
-  @apply rounded-lg;
-  @apply shadow;
 
   .rows {
     @apply flex flex-col;

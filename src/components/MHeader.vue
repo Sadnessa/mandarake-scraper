@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <MCard>
     <h1>Welcome, user</h1>
     <div class="btns-col">
       <router-link to="/login">
@@ -9,26 +9,27 @@
         <MButton>Sign up</MButton>
       </router-link>
     </div>
-  </div>
+  </MCard>
 </template>
 
 <script>
 import MButton from "./base/MButton.vue";
+import MCard from "./base/MCard.vue";
 
 export default {
   components: {
     MButton,
+    MCard,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.header {
-  @apply bg-white;
+.card {
   @apply flex justify-between items-center;
   @apply flex-col sm:flex-row;
-  @apply py-5 px-8 rounded-b-2xl;
-  @apply shadow;
+  @apply py-5 px-8;
+  @apply rounded-t-none rounded-b-2xl;
 
   h1 {
     @apply font-bold text-3xl;
