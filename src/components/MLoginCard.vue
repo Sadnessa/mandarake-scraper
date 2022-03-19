@@ -3,10 +3,10 @@
     <h1>Log in</h1>
 
     <p>Username</p>
-    <MInput></MInput>
+    <MInput v-model="usernameText"></MInput>
 
     <p>Password</p>
-    <MInput></MInput>
+    <MInput v-model="passwordText"></MInput>
     
     <div class="btns">
       <router-link to="/signup">
@@ -30,6 +30,13 @@ export default {
     MInput,
     MCard,
   },
+
+  data() {
+    return {
+      usernameText: "",
+      passwordText: "",
+    }
+  }
 };
 </script>
 

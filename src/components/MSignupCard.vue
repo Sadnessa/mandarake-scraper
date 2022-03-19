@@ -3,16 +3,16 @@
     <h1>Sign up</h1>
 
     <p>Username</p>
-    <MInput></MInput>
+    <MInput v-model="usernameText"></MInput>
 
     <p>Email</p>
-    <MInput></MInput>
+    <MInput v-model="emailText"></MInput>
 
     <p>Password</p>
-    <MInput></MInput>
+    <MInput v-model="passwordText"></MInput>
 
     <p>Confirm password</p>
-    <MInput></MInput>
+    <MInput v-model="confirmPasswordText"></MInput>
 
     <div class="btns">
       <router-link to="/login">
@@ -36,6 +36,15 @@ export default {
     MInput,
     MCard,
   },
+
+  data() {
+    return {
+      usernameText: "",
+      emailText: "",
+      passwordText: "",
+      confirmPasswordText: "",
+    }
+  }
 };
 </script>
 

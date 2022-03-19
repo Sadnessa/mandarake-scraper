@@ -3,7 +3,7 @@
     <div class="search-sec">
       <h1>Mandarake scraper</h1>
       <div class="col">
-        <MInput placeholder="Paste link here" v-model="inputText"></MInput>
+        <MInput placeholder="Paste link here" v-model="searchText"></MInput>
         <MButton size="large" :disabled="disableButton">Add link</MButton>
       </div>
     </div>
@@ -47,13 +47,13 @@ export default {
         },
       ],
 
-      inputText: "",
+      searchText: "",
     };
   },
 
   computed: {
     disableButton() {
-      if (this.inputText.length <= 2) {
+      if (this.searchText.length <= 2) {
         return true
       }
     }
