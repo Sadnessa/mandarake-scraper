@@ -25,14 +25,14 @@ export default {
 .inpt {
   @apply bg-neutral-300;
   @apply px-3 py-3 box-border rounded-lg;
-  @apply font-bold text-xs;
+  @apply font-medium text-xs;
 
   &:focus {
     @apply outline-dashed outline-2 outline-purple-500;
   }
 
   &::placeholder {
-    @apply text-neutral-500;
+    @apply font-bold text-neutral-500;
   }
 }
 </style>
