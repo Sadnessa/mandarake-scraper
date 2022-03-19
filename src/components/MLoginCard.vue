@@ -1,10 +1,13 @@
 <template>
   <MCard>
     <h1>Log in</h1>
+
     <p>Username</p>
     <MInput></MInput>
+
     <p>Password</p>
     <MInput></MInput>
+    
     <div class="btns">
       <router-link to="/signup">
         <MButton type="flat">Sign up</MButton>
