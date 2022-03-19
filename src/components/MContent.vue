@@ -3,8 +3,8 @@
     <div class="search-sec">
       <h1>Mandarake scraper</h1>
       <div class="col">
-        <MInput placeholder="Paste link here"></MInput>
-        <MButton size="large" disabled>Add link</MButton>
+        <MInput placeholder="Paste link here" v-model="inputText"></MInput>
+        <MButton size="large" :disabled="disableButton">Add link</MButton>
       </div>
     </div>
     <div class="cards-sec">
@@ -46,8 +46,18 @@ export default {
           date: "20 JUN 2021",
         },
       ],
+
+      inputText: "",
     };
   },
+
+  computed: {
+    disableButton() {
+      if (this.inputText.length <= 2) {
+        return true
+      }
+    }
+  }
 };
 </script>
 

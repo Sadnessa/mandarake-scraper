@@ -1,11 +1,20 @@
 <template>
-  <input class="inpt" :placeholder="placeholder" />
+  <input
+    class="inpt"
+    :placeholder="placeholder"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+  />
 </template>
 
 <script>
 export default {
   props: {
     placeholder: {
+      type: String,
+    },
+
+    modelValue: {
       type: String,
     },
   },
