@@ -6,7 +6,7 @@
         <MButton>Log in</MButton>
       </router-link>
       <router-link to="/signup">
-        <MButton>Sign up</MButton>
+        <MButton type="flat">Sign up</MButton>
       </router-link>
     </div>
   </MCard>
