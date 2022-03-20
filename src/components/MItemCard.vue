@@ -8,8 +8,8 @@
       <div class="rows__bottom">
         <p> {{ price }} </p>
         <div class="btns-col">
-          <MButton size="small">View log</MButton>
-          <MButton size="small">Delete</MButton>
+          <MButton size="small" type="flat">View log</MButton>
+          <MButton size="small" @click="$emit('delete', id)">Delete</MButton>
         </div>
       </div>
     </div>
@@ -37,6 +37,10 @@ export default {
 
     price: {
       type: String,
+    },
+
+    id: {
+      type: Number,
     }
   },
 };

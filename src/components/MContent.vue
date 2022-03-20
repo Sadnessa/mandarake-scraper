@@ -7,15 +7,24 @@
         <MButton size="large" :disabled="disableButton">Add link</MButton>
       </div>
     </div>
+
     <div class="cards-sec">
-      <MItemCard
-        v-for="card in cards"
-        :key="card"
-        :date="card.date"
-        :price="card.price"
-        :title="card.title"
-      ></MItemCard>
+      <TransitionGroup name="list">
+        <MItemCard
+          v-for="card in cards"
+          :key="card"
+          :date="card.date"
+          :price="card.price"
+          :title="card.title"
+          :id="card.id"
+          @delete="onDelete"
+        ></MItemCard>
+      </TransitionGroup>
     </div>
+
+    <MModal v-model="doShowModal" @confirm="deleteItem">
+      Do you really want to delete this card?
+    </MModal>
   </div>
 </template>
 
@@ -23,24 +32,28 @@
 import MButton from "./base/MButton.vue";
 import MInput from "./base/MInput.vue";
 import MItemCard from "./MItemCard.vue";
+import MModal from "./base/MModal.vue";
 
 export default {
   components: {
     MButton,
     MInput,
     MItemCard,
+    MModal,
   },
 
   data() {
     return {
       cards: [
         {
+          id: 1,
           title: "Mandarake",
           price: "4000",
           date: "20 JUN 2021",
         },
 
         {
+          id: 2,
           title: "Ыыы",
           price: "4000",
           date: "20 JUN 2021",
@@ -48,16 +61,33 @@ export default {
       ],
 
       searchText: "",
+
+      doShowModal: false,
+
+      deletedID: null,
     };
   },
 
   computed: {
     disableButton() {
       if (this.searchText.length <= 2) {
-        return true
+        return true;
       }
-    }
-  }
+    },
+  },
+
+  methods: {
+    onDelete(id) {
+      this.deletedID = id;
+      this.doShowModal = true;
+    },
+
+    deleteItem() {
+      this.cards = this.cards.filter((card) => {
+        return card.id !== this.deletedID;
+      });
+    },
+  },
 };
 </script>
 
@@ -76,6 +106,8 @@ export default {
     }
 
     .col {
+      @apply flex items-center;
+
       * {
         @apply mr-2;
 
@@ -84,6 +116,22 @@ export default {
         }
       }
     }
+  }
+
+  .list-move,
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.5s ease;
+  }
+
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .list-leave-active {
+    position: absolute;
   }
 
   .card {
