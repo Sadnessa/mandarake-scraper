@@ -22,9 +22,9 @@
       </TransitionGroup>
     </div>
 
-    <MModal v-model="doShowModal" @confirm="deleteItem">
-      Do you really want to delete this card?
-    </MModal>
+      <MModal v-model="doShowModal" @confirm="deleteItem">
+        Do you really want to delete this card?
+      </MModal>
   </div>
 </template>
 
@@ -118,20 +118,8 @@ export default {
     }
   }
 
-  .list-move,
-  .list-enter-active,
-  .list-leave-active {
-    transition: all 0.5s ease;
-  }
-
-  .list-enter-from,
-  .list-leave-to {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-
-  .list-leave-active {
-    position: absolute;
+  .cards-sec {
+    position: relative;
   }
 
   .card {
@@ -141,5 +129,22 @@ export default {
       @apply mb-0;
     }
   }
+}
+
+//transition group for cards
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.list-leave-active {
+  position: absolute;
 }
 </style>

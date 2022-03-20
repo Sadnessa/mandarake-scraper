@@ -1,17 +1,19 @@
 <template>
-  <div class="modal" v-if="modelValue">
-    <MCard>
-      <h1>Confirm</h1>
-      <p>
-        <slot></slot>
-      </p>
-      <div class="btns">
-        <MButton type="flat" @click="onDecline">Decline</MButton>
-        <MButton @click="onConfirm">Confirm</MButton>
-      </div>
-    </MCard>
-    <div class="modal__overlay"></div>
-  </div>
+  <Transition name="fade" mode="out-in">
+    <div class="modal" v-if="modelValue">
+      <MCard>
+        <h1>Confirm</h1>
+        <p>
+          <slot></slot>
+        </p>
+        <div class="btns">
+          <MButton type="flat" @click="onDecline">Decline</MButton>
+          <MButton @click="onConfirm">Confirm</MButton>
+        </div>
+      </MCard>
+      <div class="modal__overlay"></div>
+    </div>
+  </Transition>
 </template>
 
 <script>
@@ -33,12 +35,12 @@ export default {
   methods: {
     onConfirm() {
       this.$emit("update:modelValue", false);
-      this.$emit('confirm');
+      this.$emit("confirm");
     },
 
     onDecline() {
       this.$emit("update:modelValue", false);
-      this.$emit('decline');
+      this.$emit("decline");
     },
   },
 };
@@ -84,6 +86,25 @@ export default {
     @apply h-screen w-screen;
     @apply absolute inset-0 -z-10;
     @apply bg-gray-500 opacity-40;
+  }
+}
+
+//transition for modal
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+
+  .card {
+    transition: transform 0.5s ease;
+  }
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+
+  .card {
+    transform: translateY(30px);
   }
 }
 </style>
