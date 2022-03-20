@@ -4,7 +4,7 @@
       <h1>Mandarake scraper</h1>
       <div class="col">
         <MInput placeholder="Paste link here" v-model="searchText"></MInput>
-        <MButton size="large" :disabled="disableButton">Add link</MButton>
+        <MButton size="large" :disabled="disableButton" @click="addItem">Add link</MButton>
       </div>
     </div>
 
@@ -12,7 +12,7 @@
       <TransitionGroup name="list">
         <MItemCard
           v-for="card in cards"
-          :key="card"
+          :key="card.id"
           :date="card.date"
           :price="card.price"
           :title="card.title"
@@ -22,13 +22,14 @@
       </TransitionGroup>
     </div>
 
-      <MModal v-model="doShowModal" @confirm="deleteItem">
-        Do you really want to delete this card?
-      </MModal>
+    <MModal v-model="doShowModal" @confirm="deleteItem">
+      Do you really want to delete this card?
+    </MModal>
   </div>
 </template>
 
 <script>
+import { itemList, addItem, deleteItem } from "../api";
 import MButton from "./base/MButton.vue";
 import MInput from "./base/MInput.vue";
 import MItemCard from "./MItemCard.vue";
@@ -44,21 +45,7 @@ export default {
 
   data() {
     return {
-      cards: [
-        {
-          id: 1,
-          title: "Mandarake",
-          price: "4000",
-          date: "20 JUN 2021",
-        },
-
-        {
-          id: 2,
-          title: "Ыыы",
-          price: "4000",
-          date: "20 JUN 2021",
-        },
-      ],
+      cards: [],
 
       searchText: "",
 
@@ -66,6 +53,12 @@ export default {
 
       deletedID: null,
     };
+  },
+
+  created() {
+    itemList().then((value) => {
+      this.cards = value;
+    });
   },
 
   computed: {
@@ -83,10 +76,16 @@ export default {
     },
 
     deleteItem() {
-      this.cards = this.cards.filter((card) => {
-        return card.id !== this.deletedID;
+      deleteItem(this.deletedID).then((value) => {
+        this.cards = value;
       });
     },
+
+    addItem() {
+      addItem(this.searchText).then((value) => {
+        this.cards = value;
+      })
+    }
   },
 };
 </script>
@@ -124,10 +123,6 @@ export default {
 
   .card {
     @apply mb-4;
-
-    &:last-child {
-      @apply mb-0;
-    }
   }
 }
 
