@@ -1,5 +1,5 @@
 <template>
-  <button :class="compClass" :disabled="disabled" @click="$emit('click')">
+  <button :class="compClass" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
