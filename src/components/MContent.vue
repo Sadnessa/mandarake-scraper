@@ -93,6 +93,8 @@ export default {
 <style lang="scss" scoped>
 .content {
   @apply container lg:px-36 px-2;
+  @apply flex flex-col; 
+  height: 700px;
 
   .search-sec {
     @apply flex items-center justify-between;
@@ -119,6 +121,11 @@ export default {
 
   .cards-sec {
     position: relative;
+    @apply overflow-y-auto;
+    @apply overflow-x-hidden;
+    @apply grow;
+    scrollbar-gutter: stable;
+     scrollbar-width: thin;
   }
 
   .card {

@@ -12,6 +12,32 @@ let items = [
     price: "4000",
     date: "20 JUN 2021",
   },
+  {
+    id: 3,
+    title: "Mandarake",
+    price: "4000",
+    date: "20 JUN 2021",
+  },
+
+  {
+    id: 4,
+    title: "Ыыы",
+    price: "4000",
+    date: "20 JUN 2021",
+  },
+  {
+    id: 5,
+    title: "Mandarake",
+    price: "4000",
+    date: "20 JUN 2021",
+  },
+
+  {
+    id: 6,
+    title: "Ыыы",
+    price: "4000",
+    date: "20 JUN 2021",
+  },
 ]
 
 export function itemList() {
