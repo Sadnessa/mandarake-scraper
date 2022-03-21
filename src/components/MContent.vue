@@ -4,7 +4,9 @@
       <h1>Mandarake scraper</h1>
       <div class="col">
         <MInput placeholder="Paste link here" v-model="searchText"></MInput>
-        <MButton size="large" :disabled="disableButton" @click="addItem">Add link</MButton>
+        <MButton size="large" :disabled="disableButton" @click="addItem"
+          >Add link</MButton
+        >
       </div>
     </div>
 
@@ -84,8 +86,8 @@ export default {
     addItem() {
       addItem(this.searchText).then((value) => {
         this.cards = value;
-      })
-    }
+      });
+    },
   },
 };
 </script>
@@ -93,7 +95,7 @@ export default {
 <style lang="scss" scoped>
 .content {
   @apply container lg:px-36 px-2;
-  @apply flex flex-col; 
+  @apply flex flex-col;
   height: 700px;
 
   .search-sec {
@@ -125,11 +127,11 @@ export default {
     @apply overflow-x-hidden;
     @apply grow;
     scrollbar-gutter: stable;
-     scrollbar-width: thin;
-  }
+    scrollbar-width: thin;
 
-  .card {
-    @apply mb-4;
+    .card {
+      @apply mb-4;
+    }
   }
 }
 
