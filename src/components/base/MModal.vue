@@ -51,6 +51,7 @@ export default {
   @apply h-screen w-screen;
   @apply fixed inset-0;
   @apply flex justify-center items-center;
+  @apply z-10;
 
   .card {
     @apply max-w-sm;

@@ -120,6 +120,7 @@ export default {
     @apply w-full h-28;
     @apply bg-gradient-to-t from-neutral-200 to-transparent;
     @apply pointer-events-none;
+    @apply z-0;
   }
 
   .search-sec {
