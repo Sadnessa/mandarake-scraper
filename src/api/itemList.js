@@ -44,7 +44,7 @@ export function itemList() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(items)
-    }, 1000)
+    }, 100)
   })
 
 }
@@ -60,7 +60,7 @@ export function addItem(link) {
         date: "20 JUN 2021",
       })
       resolve(items)
-    }, 1000)
+    }, 100)
   })
 }
 
@@ -71,6 +71,6 @@ export function deleteItem(id) {
         return id !== i.id
       })
       resolve(items)
-    }, 1000)
+    }, 100)
   })
 }
