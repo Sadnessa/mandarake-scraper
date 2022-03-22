@@ -10,8 +10,7 @@
       </div>
     </div>
 
-    <div class="cards-sec">
-      <!-- ref="list" -->
+    <div class="cards-sec" ref="list">
       <TransitionGroup name="list">
         <MItemCard
           v-for="card in cards"
@@ -78,13 +77,18 @@ export default {
       this.doShowModal = true;
     },
 
-    // scrollListToBottom() {
-    //   this.$refs.list.scrollTo(this.$refs.list.scrollHeight);
-    // },
+    scrollListToBottom() {
+      this.$refs.list.scrollTo({
+        top: this.$refs.list.scrollHeight,
+        behavior: "smooth",
+      });
+    },
 
-    // onCardAdded() {
-    //   this.scrollListToBottom();
-    // },
+    onCardAdded() {
+      this.$nextTick(() => {
+        this.scrollListToBottom();
+      });
+    },
 
     deleteItem() {
       deleteItem(this.deletedID).then((value) => {
@@ -95,7 +99,7 @@ export default {
     addItem() {
       addItem(this.searchText).then((value) => {
         this.cards = value;
-        // this.onCardAdded();
+        this.onCardAdded();
       });
     },
   },
