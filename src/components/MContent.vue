@@ -101,6 +101,8 @@ export default {
         this.cards = value;
         this.onCardAdded();
       });
+
+      this.searchText = ""
     },
   },
 };
