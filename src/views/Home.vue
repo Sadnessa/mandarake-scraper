@@ -17,3 +17,15 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.home {
+  @apply h-screen;
+  @apply flex flex-col;
+
+  .content {
+    @apply grow;
+    @apply overflow-hidden;
+  }
+}
+</style>

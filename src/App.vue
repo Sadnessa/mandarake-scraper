@@ -19,7 +19,6 @@
 
 body {
   @apply bg-neutral-200;
-  @apply overflow-hidden;
 }
 
 .fade-enter-active,

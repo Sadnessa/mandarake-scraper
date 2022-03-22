@@ -11,6 +11,7 @@
     </div>
 
     <div class="cards-sec">
+      <!-- ref="list" -->
       <TransitionGroup name="list">
         <MItemCard
           v-for="card in cards"
@@ -77,6 +78,14 @@ export default {
       this.doShowModal = true;
     },
 
+    // scrollListToBottom() {
+    //   this.$refs.list.scrollTo(this.$refs.list.scrollHeight);
+    // },
+
+    // onCardAdded() {
+    //   this.scrollListToBottom();
+    // },
+
     deleteItem() {
       deleteItem(this.deletedID).then((value) => {
         this.cards = value;
@@ -86,6 +95,7 @@ export default {
     addItem() {
       addItem(this.searchText).then((value) => {
         this.cards = value;
+        // this.onCardAdded();
       });
     },
   },
@@ -96,7 +106,15 @@ export default {
 .content {
   @apply container lg:px-36 px-2;
   @apply flex flex-col;
-  height: 700px;
+  @apply relative;
+
+  &:after {
+    content: "";
+    @apply absolute left-0 right-0 bottom-0;
+    @apply w-full h-28;
+    @apply bg-gradient-to-t from-neutral-200 to-transparent;
+    @apply pointer-events-none;
+  }
 
   .search-sec {
     @apply flex items-center justify-between;
@@ -128,9 +146,14 @@ export default {
     @apply grow;
     scrollbar-gutter: stable;
     scrollbar-width: thin;
+    @apply pb-5;
 
     .card {
       @apply mb-4;
+
+      &:last-child {
+        @apply mb-1.5;
+      }
     }
   }
 }
