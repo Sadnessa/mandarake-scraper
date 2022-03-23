@@ -49,7 +49,7 @@ export default {
   @apply border-2 border-purple-500;
 
   .content {
-    @apply flex;
+    @apply flex items-center justify-center;
   }
 
   //types
