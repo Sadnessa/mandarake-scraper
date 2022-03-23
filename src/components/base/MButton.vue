@@ -1,7 +1,9 @@
 <template>
   <button :class="compClass" :disabled="disabled">
     <div class="content">
-      <slot name="icon"></slot>
+      <div class="icon-wrap" v-if="$slots.icon">
+        <slot name="icon"></slot>
+      </div>
       <slot></slot>
     </div>
   </button>
@@ -50,6 +52,12 @@ export default {
 
   .content {
     @apply flex items-center justify-center;
+
+    .icon-wrap {
+      @apply flex items-center;
+      @apply text-lg font-semibold;
+      @apply pr-1.5;
+    }
   }
 
   //types
@@ -81,6 +89,7 @@ export default {
   //states
   &--disabled {
     @apply opacity-50;
+    @apply cursor-not-allowed;
   }
 }
 </style>

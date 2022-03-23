@@ -21,6 +21,12 @@ body {
   @apply bg-neutral-200;
 }
 
+.material-icons {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+//transition between pages
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
