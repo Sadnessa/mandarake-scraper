@@ -21,7 +21,7 @@ body {
   @apply bg-neutral-200;
 }
 
-.material-icons {
+.material-icons, .material-icons-round {
   font-size: inherit;
   font-weight: inherit;
 }
