@@ -3,11 +3,13 @@
     <MCard>
       <h1>Welcome, user</h1>
       <div class="btns-col">
-        <router-link to="/signup">
-          <MButton type="flat">Sign up</MButton>
-        </router-link>
         <router-link to="/login">
-          <MButton>Log in</MButton>
+          <MButton>
+            <template #icon>
+              <span class="material-icons"> logout </span>
+            </template>
+            Log out
+          </MButton>
         </router-link>
       </div>
     </MCard>
@@ -39,6 +41,11 @@ export default {
   }
 
   .btns-col {
+    span {
+      @apply text-sm;
+      @apply pr-1.5;
+    }
+
     * {
       @apply mr-1.5;
 
