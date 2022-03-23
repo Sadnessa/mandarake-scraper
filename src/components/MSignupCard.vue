@@ -3,16 +3,32 @@
     <h1>Sign up</h1>
 
     <p>Username</p>
-    <MInput v-model="usernameText"></MInput>
+    <MInput v-model="usernameText">
+       <template #icon>
+        <span class="material-icons-round"> person </span>
+      </template>
+    </MInput>
 
     <p>Email</p>
-    <MInput v-model="emailText"></MInput>
+    <MInput v-model="emailText">
+       <template #icon>
+        <span class="material-icons-round"> alternate_email </span>
+      </template>
+    </MInput>
 
     <p>Password</p>
-    <MInput v-model="passwordText"></MInput>
+    <MInput v-model="passwordText">
+      <template #icon>
+        <span class="material-icons-round"> vpn_key </span>
+      </template>
+    </MInput>
 
     <p>Confirm password</p>
-    <MInput v-model="confirmPasswordText"></MInput>
+    <MInput v-model="confirmPasswordText">
+      <template #icon>
+        <span class="material-icons-round"> vpn_key </span>
+      </template>
+    </MInput>
 
     <div class="btns">
       <router-link to="/login">

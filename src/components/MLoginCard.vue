@@ -3,11 +3,19 @@
     <h1>Log in</h1>
 
     <p>Username</p>
-    <MInput v-model="usernameText"></MInput>
+    <MInput v-model="usernameText">
+      <template #icon>
+        <span class="material-icons-round"> person </span>
+      </template>
+    </MInput>
 
     <p>Password</p>
-    <MInput v-model="passwordText"></MInput>
-    
+    <MInput v-model="passwordText">
+      <template #icon>
+        <span class="material-icons-round"> vpn_key </span>
+      </template>
+    </MInput>
+
     <div class="btns">
       <router-link to="/signup">
         <MButton type="flat">Sign up</MButton>
@@ -35,8 +43,8 @@ export default {
     return {
       usernameText: "",
       passwordText: "",
-    }
-  }
+    };
+  },
 };
 </script>
 
