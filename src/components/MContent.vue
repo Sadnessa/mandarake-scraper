@@ -4,9 +4,9 @@
       <h1>Mandarake scraper</h1>
       <div class="col">
         <MInput placeholder="Paste link here" v-model="searchText"></MInput>
-        <MButton size="large" :disabled="disableButton" @click="addItem"
-          >Add link</MButton
-        >
+        <MButton size="large" :disabled="disableButton" @click="addItem">
+          Add link
+        </MButton>
       </div>
     </div>
 
@@ -15,10 +15,7 @@
         <MItemCard
           v-for="card in cards"
           :key="card.id"
-          :date="card.date"
-          :price="card.price"
-          :title="card.title"
-          :id="card.id"
+          v-bind="card"
           @delete="onDelete"
         ></MItemCard>
       </TransitionGroup>
@@ -102,7 +99,7 @@ export default {
         this.onCardAdded();
       });
 
-      this.searchText = ""
+      this.searchText = "";
     },
   },
 };
