@@ -1,6 +1,9 @@
 <template>
   <button :class="compClass" :disabled="disabled">
-    <slot></slot>
+    <div class="content">
+      <slot name="icon"></slot>
+      <slot></slot>
+    </div>
   </button>
 </template>
 
@@ -44,6 +47,10 @@ export default {
   @apply font-bold text-sm;
   @apply box-border;
   @apply border-2 border-purple-500;
+
+  .content {
+    @apply flex;
+  }
 
   //types
   &--solid {
