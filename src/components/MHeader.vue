@@ -42,7 +42,7 @@ export default {
 
   .btns-col {
     span {
-      @apply text-sm;
+      @apply text-base font-semibold;
       @apply pr-1.5;
     }
 
