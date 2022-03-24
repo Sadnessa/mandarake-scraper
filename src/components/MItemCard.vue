@@ -2,28 +2,39 @@
   <MCard>
     <div class="rows">
       <div class="rows__top">
-        <h1> {{ title }}</h1>
-        <p> {{ date }} </p>
+        <h1>{{ title }}</h1>
+        <p>{{ date }}</p>
       </div>
       <div class="rows__bottom">
-        <p> {{ price }} </p>
+        <p>{{ price }}</p>
         <div class="btns-col">
           <MButton size="small" type="flat">View log</MButton>
-          <MButton size="small" @click="$emit('delete', id)">Delete</MButton>
+          <MButton size="small" @click="doShowModal = true">Delete</MButton>
         </div>
       </div>
     </div>
+    <MModal v-model="doShowModal" @confirm="$emit('delete', id)">
+      Do you really want to delete this card?
+    </MModal>
   </MCard>
 </template>
 
 <script>
 import MButton from "./base/MButton.vue";
 import MCard from "./base/MCard.vue";
+import MModal from "./base/MModal.vue";
 
 export default {
   components: {
     MButton,
     MCard,
+    MModal,
+  },
+
+  data() {
+    return {
+      doShowModal: false,
+    };
   },
 
   props: {
@@ -41,7 +52,15 @@ export default {
 
     id: {
       type: Number,
-    }
+    },
+  },
+
+  emits: ["delete"],
+
+  methods: {
+    onDelete() {
+      this.doShowModal = true;
+    },
   },
 };
 </script>
