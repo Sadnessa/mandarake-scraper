@@ -2,6 +2,11 @@
   <div class="logs" v-if="card !== undefined">
     <div class="item-title">
       <MCard>
+        <MButton rounded>
+          <template #icon>
+            <span class="material-icons-round"> keyboard_backspace </span>
+          </template>
+        </MButton>
         <h1>{{ card.title }}</h1>
       </MCard>
     </div>
@@ -18,12 +23,14 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { useCards } from "../../store/cards"
+import { useCards } from "../../store/cards";
 import MCard from "../../components/base/MCard.vue";
+import MButton from "../../components/base/MButton.vue";
 
 export default {
   components: {
     MCard,
+    MButton,
   },
 
   computed: {
@@ -53,6 +60,10 @@ export default {
 
   .item-title {
     @apply mb-4;
+
+    .card {
+      @apply flex;
+    }
   }
 
   .main {
