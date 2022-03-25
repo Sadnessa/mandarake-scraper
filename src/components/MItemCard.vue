@@ -8,7 +8,9 @@
       <div class="rows__bottom">
         <p>{{ price }}</p>
         <div class="btns-col">
-          <MButton size="small" type="flat">View log</MButton>
+          <router-link :to="'/logs/' + id">
+            <MButton size="small" type="flat">View log</MButton>
+          </router-link>
           <MButton size="small" @click="doShowModal = true">Delete</MButton>
         </div>
       </div>

@@ -1,12 +1,13 @@
 <template>
   <div class="content">
     <MSearch></MSearch>
-    <MCardList></MCardList>
+      <Transition name="fade" mode="out-in">
+    <router-view> </router-view>
+    </Transition>
   </div>
 </template>
 
 <script>
-import { itemList, addItem, deleteItem } from "../api";
 import MSearch from "../components/MSearch.vue";
 import MCardList from "../components/MCardList.vue";
 
@@ -32,5 +33,16 @@ export default {
     @apply pointer-events-none;
     @apply z-0;
   }
+}
+
+//transition between pages
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
