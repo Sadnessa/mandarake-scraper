@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "pinia";
-import { useCards } from "../store/cards";
 import MButton from "./base/MButton.vue";
 import MInput from "./base/MInput.vue";
 import MCard from "./base/MCard.vue";
