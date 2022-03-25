@@ -9,12 +9,10 @@
 
 <script>
 import MSearch from "../components/MSearch.vue";
-import MCardList from "../components/MCardList.vue";
 
 export default {
   components: {
     MSearch,
-    MCardList,
   },
 };
 </script>
