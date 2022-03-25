@@ -27,6 +27,11 @@ export default {
       type: Boolean,
       default: false,
     },
+
+    rounded: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   computed: {
@@ -36,6 +41,7 @@ export default {
         [`btn--${this.size}`]: true,
         [`btn--${this.type}`]: true,
         "btn--disabled": this.disabled,
+        "btn--rounded": this.rounded,
       };
     },
   },
@@ -84,6 +90,24 @@ export default {
 
   &--large {
     @apply px-6 py-2;
+  }
+
+  //form
+  &--rounded {
+    @apply p-1.5;
+    @apply rounded-full;
+
+    .content .icon-wrap {
+      @apply pr-0;
+    }
+
+    &.btn--small {
+      @apply p-1;
+    }
+
+    &.btn--large {
+      @apply p-2;
+    }
   }
 
   //states
