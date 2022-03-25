@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Signup from './views/SignUp.vue'
-import MCardList from "./components/MCardList.vue"
-import MLogs from "./components/MLogs.vue"
+import MCardList from "./views/home/MCardList.vue"
+import MLogs from "./views/home/MLogs.vue"
 
 const routes = [
   {

@@ -18,8 +18,8 @@
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { useCards } from "../store/cards";
-import MCard from "./base/MCard.vue";
+import { useCards } from "../../store/cards"
+import MCard from "../../components/base/MCard.vue";
 
 export default {
   components: {
