@@ -1,16 +1,20 @@
 <template>
   <div class="graph">
     <h1>Dynamic</h1>
-    <MCard></MCard>
+    <MCard>
+      <MChart></MChart>
+    </MCard>
   </div>
 </template>
 
 <script>
 import MCard from "./base/MCard.vue";
+import MChart from "../components/base/MChart.vue"
 
 export default {
   components: {
     MCard,
+    MChart,
   },
 };
 </script>
