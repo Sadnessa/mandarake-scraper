@@ -3,6 +3,9 @@
     <MCard>
       <h1>Welcome, user</h1>
       <div class="btns-col">
+        <MButton rounded>
+          <span class="material-icons-round"> color_lens </span>
+        </MButton>
         <router-link to="/login">
           <MButton>
             <template #icon>
@@ -41,7 +44,6 @@ export default {
   }
 
   .btns-col {
- 
     * {
       @apply mr-1.5;
 
