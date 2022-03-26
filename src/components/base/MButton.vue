@@ -94,19 +94,23 @@ export default {
 
   //form
   &--rounded {
-    @apply p-1.5;
     @apply rounded-full;
+    @apply w-9 h-9;
+    @apply p-0;
+    @apply text-xl;
 
     .content .icon-wrap {
       @apply pr-0;
     }
 
     &.btn--small {
-      @apply p-1;
+      @apply w-7 h-7;
+      @apply p-0;
     }
 
     &.btn--large {
-      @apply p-2;
+      @apply w-10 h-10;
+      @apply p-0;
     }
   }
 
