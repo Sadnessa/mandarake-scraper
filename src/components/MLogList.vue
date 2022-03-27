@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 .log-list {
   @apply w-full md:w-2/5;
-  @apply pl-0 sm:pl-3;
+  @apply pl-0 md:pl-3;
 
   h1 {
     @apply font-bold text-2xl;
