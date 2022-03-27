@@ -1,9 +1,9 @@
  <template>
   <div class="log-list">
     <h1>Price changes</h1>
-    <MCard>
-      <p>Price</p>
-      <p>Date</p>
+    <MCard v-for="log in logs" :key="log.date">
+      <p>{{ log.price }}</p>
+      <p>{{ log.date }}</p>
     </MCard>
   </div>
 </template>
@@ -15,6 +15,12 @@ export default {
   components: {
     MCard,
   },
+
+  props: {
+    logs: {
+      type: Array,
+    }
+  }
 };
 </script>
 
@@ -31,6 +37,7 @@ export default {
   .card {
     @apply flex justify-between;
     @apply py-2 px-6;
+    @apply mb-3;
   }
 }
 </style>

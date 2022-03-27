@@ -17,7 +17,7 @@
     </div>
     <div class="main">
       <MGraph></MGraph>
-      <MLogList></MLogList>
+      <MLogList :logs="logs"></MLogList>
     </div>
   </div>
 </template>
@@ -25,6 +25,7 @@
 <script>
 import { mapState, mapActions } from "pinia";
 import { useCards } from "../../store/cards";
+import { getLogs } from "../../api";
 import MCard from "../../components/base/MCard.vue";
 import MButton from "../../components/base/MButton.vue";
 import MGraph from "../../components/MGraph.vue";
@@ -36,6 +37,12 @@ export default {
     MButton,
     MGraph,
     MLogList,
+  },
+
+  data() {
+    return {
+      logs: [],
+    };
   },
 
   computed: {
@@ -54,6 +61,9 @@ export default {
 
   created() {
     this.loadCards();
+    getLogs(this.$route.params["id"]).then((value) => {
+      this.logs = value
+    });
   },
 };
 </script>
