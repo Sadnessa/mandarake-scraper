@@ -1,10 +1,15 @@
 <template>
-  <canvas ref="chart" height="250"></canvas>
+  <canvas ref="chart"></canvas>
 </template>
 
 <script>
 import Chart from "chart.js/auto";
+// var ctx = this.$refs.chart.getContext("2d");
+// var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+// gradientStroke.addColorStop(0, "#80b6f4");
+// gradientStroke.addColorStop(1, "#f49080");
 const DATA_COUNT = 12;
+
 const labels = [];
 for (let i = 0; i < DATA_COUNT; ++i) {
   labels.push(i.toString());
@@ -14,12 +19,12 @@ const data = {
   labels: labels,
   datasets: [
     {
-      label: 'Cubic interpolation (monotone)',
       data: datapoints,
-      borderColor: "red",
-      fill: false,
+      borderColor: "#c084fc",
+      backgroundColor: "rgba(192, 132, 252, 0.2)",
+      fill: true,
       cubicInterpolationMode: 'monotone',
-      tension: 0.4
+      tension: 2
     }
   ]
 };
@@ -47,8 +52,6 @@ export default {
             },
             y: {
               display: true,
-              suggestedMin: -10,
-              suggestedMax: 200,
             },
           },
         },
