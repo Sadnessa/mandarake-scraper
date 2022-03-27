@@ -9,7 +9,7 @@
 
 <script>
 import MCard from "./base/MCard.vue";
-import MChart from "../components/base/MChart.vue"
+import MChart from "../components/base/MChart.vue";
 
 export default {
   components: {
@@ -21,11 +21,11 @@ export default {
 
 <style lang="scss" scoped>
 .graph {
-  @apply w-3/5;
+  @apply w-full md:w-3/5;
 
-   h1 {
-      @apply font-bold text-2xl;
-      @apply py-3;
-    }
+  h1 {
+    @apply font-bold text-2xl;
+    @apply py-3;
+  }
 }
 </style>

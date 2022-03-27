@@ -85,7 +85,7 @@ export default {
   }
 
   .main {
-    @apply flex flex-row;
+    @apply flex flex-col md:flex-row;
   }
 }
 </style>
