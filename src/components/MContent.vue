@@ -1,8 +1,8 @@
 <template>
   <div class="content">
     <MSearch></MSearch>
-      <Transition name="fade" mode="out-in">
-    <router-view> </router-view>
+    <Transition name="fade" mode="out-in">
+      <router-view> </router-view>
     </Transition>
   </div>
 </template>

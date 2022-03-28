@@ -72,6 +72,7 @@ export default {
 .logs {
   @apply flex flex-col;
   @apply h-screen;
+  @apply overflow-hidden;
 
   .item-title {
     @apply mb-4;
@@ -96,6 +97,8 @@ export default {
 
   .main {
     @apply flex flex-col md:flex-row;
+    @apply grow;
+    @apply overflow-hidden;
   }
 }
 </style>

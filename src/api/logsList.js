@@ -13,6 +13,49 @@ let logs = {
     {
       price: 43243,
       date: "rerwe"
+    },
+    
+    {
+      price: 43243,
+      date: "rerwe"
+    },
+
+    {
+      price: 43243,
+      date: "rerwe"
+    },
+
+    {
+      price: 43243,
+      date: "rerwe"
+    },
+    {
+      price: 43243,
+      date: "rerwe"
+    },
+
+    {
+      price: 43243,
+      date: "rerwe"
+    },
+
+    {
+      price: 43243,
+      date: "rerwe"
+    },
+    {
+      price: 43243,
+      date: "rerwe"
+    },
+
+    {
+      price: 43243,
+      date: "rerwe"
+    },
+
+    {
+      price: 43243,
+      date: "rerwe"
     }
   ],
 
