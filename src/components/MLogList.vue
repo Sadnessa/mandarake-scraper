@@ -3,8 +3,8 @@
     <h1>Price changes</h1>
     <div class="scroll-sec">
       <MCard v-for="log in logs" :key="log.date">
-        <p>{{ log.price }}</p>
-        <p>{{ log.date }}</p>
+        <p class="price">{{ log.price }}</p>
+        <p class="date">{{ log.date }}</p>
       </MCard>
     </div>
   </div>
@@ -46,9 +46,18 @@ export default {
     @apply grow;
 
     .card {
-      @apply flex justify-between;
+      @apply flex justify-between items-center;
       @apply py-2 px-6;
       @apply mb-3;
+
+      .date {
+        @apply text-neutral-500;
+        @apply text-base uppercase;
+      }
+
+      .price {
+        @apply text-lg;
+      }
     }
   }
 }

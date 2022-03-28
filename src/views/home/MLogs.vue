@@ -11,7 +11,10 @@
         </router-link>
         <div class="title-text">
           <h1>{{ card.title }}</h1>
-          <p>Current price: {{ card.price }}</p>
+          <div class="price-sec">
+            <p>Current price:</p>
+            <p class="num">{{ card.price }}</p>
+          </div>
         </div>
       </MCard>
     </div>
@@ -62,7 +65,7 @@ export default {
   created() {
     this.loadCards();
     getLogs(this.$route.params["id"]).then((value) => {
-      this.logs = value
+      this.logs = value;
     });
   },
 };
@@ -87,6 +90,21 @@ export default {
       .title-text {
         @apply flex justify-between items-center;
         @apply w-full;
+
+        .price-sec {
+          @apply flex items-center;
+
+          p {
+            @apply text-neutral-500;
+            @apply text-base uppercase;
+          }
+
+          .num {
+            @apply text-lg;
+            @apply text-black;
+            @apply pl-2;
+          }
+        }
       }
     }
 
