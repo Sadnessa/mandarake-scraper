@@ -1,9 +1,11 @@
 <template>
   <div class="content">
     <MSearch></MSearch>
-    <Transition name="fade" mode="out-in">
-      <router-view> </router-view>
-    </Transition>
+    <router-view v-slot="{ Component }">
+      <Transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </Transition>
+    </router-view>
   </div>
 </template>
 
