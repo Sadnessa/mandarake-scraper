@@ -44,8 +44,8 @@ export default {
               borderWidth: 2,
             },
             point: {
-              borderWidth: 1,
               borderColor: "#c084fc",
+              borderWidth: 1,
             },
           },
           plugins: {

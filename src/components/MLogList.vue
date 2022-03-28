@@ -39,6 +39,7 @@ export default {
   }
 
   .scroll-sec {
+    @apply mb-10;
     @apply overflow-y-scroll;
     @apply overflow-x-hidden;
     scrollbar-gutter: stable;
@@ -49,6 +50,10 @@ export default {
       @apply flex justify-between items-center;
       @apply py-2 px-6;
       @apply mb-3;
+
+      &:last-child {
+        @apply mb-1.5;
+      }
 
       .date {
         @apply text-neutral-500;

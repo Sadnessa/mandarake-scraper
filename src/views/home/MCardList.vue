@@ -67,7 +67,7 @@ export default {
   @apply grow;
   scrollbar-gutter: stable;
   scrollbar-width: thin;
-  @apply pb-5;
+  @apply mb-10;
 
   .card {
     @apply mb-4;

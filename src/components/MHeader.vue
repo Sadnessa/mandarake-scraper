@@ -44,8 +44,9 @@ export default {
   }
 
   .btns-col {
+    @apply flex items-center;
     * {
-      @apply mr-1.5;
+      @apply mr-2.5;
 
       &:last-child {
         @apply mr-0;
