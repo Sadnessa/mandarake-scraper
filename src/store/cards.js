@@ -3,7 +3,7 @@ import { addItem, deleteItem, itemList } from '../api'
 
 export const useCards = defineStore('cards', {
   state: () => {
-    return { 
+    return {
       cards: [],
     }
   },

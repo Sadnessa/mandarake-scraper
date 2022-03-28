@@ -53,7 +53,7 @@ export default {
     },
 
     id: {
-      type: Number,
+      type: [Number, String],
     },
   },
 
