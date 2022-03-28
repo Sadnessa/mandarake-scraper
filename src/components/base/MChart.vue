@@ -15,7 +15,7 @@ const data = {
   datasets: [
     {
       data: datapoints,
-      borderColor: "#c084fc",
+
       backgroundColor: "rgba(192, 132, 252, 0.2)",
       fill: true,
       cubicInterpolationMode: "monotone",
@@ -38,6 +38,16 @@ export default {
         data: data,
         options: {
           responsive: true,
+          elements: {
+            line: {
+              borderColor: "#c084fc",
+              borderWidth: 2,
+            },
+            point: {
+              borderWidth: 1,
+              borderColor: "#c084fc",
+            },
+          },
           plugins: {
             legend: {
               display: false,
