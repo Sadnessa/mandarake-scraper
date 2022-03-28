@@ -85,7 +85,7 @@ export default {
       }
 
       .title-text {
-        @apply flex justify-between;
+        @apply flex justify-between items-center;
         @apply w-full;
       }
     }
