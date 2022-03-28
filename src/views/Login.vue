@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MLoginCard from "../components/MLoginCard.vue";
+import MLoginCard from "../components/login/MLoginCard.vue";
 
 export default {
   components: {

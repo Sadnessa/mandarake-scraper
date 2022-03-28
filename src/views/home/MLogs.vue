@@ -31,8 +31,8 @@ import { useCards } from "../../store/cards";
 import { getLogs } from "../../api";
 import MCard from "../../components/base/MCard.vue";
 import MButton from "../../components/base/MButton.vue";
-import MGraph from "../../components/MGraph.vue";
-import MLogList from "../../components/MLogList.vue";
+import MGraph from "../../components/home/logs/MGraph.vue";
+import MLogList from "../../components/home/logs/MLogList.vue";
 
 export default {
   components: {

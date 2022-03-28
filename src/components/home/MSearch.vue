@@ -12,9 +12,9 @@
 
 <script>
 import { mapActions } from "pinia";
-import { useCards } from "../store/cards";
-import MInput from "./base/MInput.vue";
-import MButton from "./base/MButton.vue";
+import { useCards } from "../../store/cards";
+import MInput from "../base/MInput.vue";
+import MButton from "../base/MButton.vue";
 
 export default {
   components: {

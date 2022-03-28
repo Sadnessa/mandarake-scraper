@@ -14,7 +14,7 @@
 <script>
 import { mapState, mapActions } from "pinia";
 import { useCards } from "../../store/cards"
-import MItemCard from "../../components/MItemCard.vue";
+import MItemCard from "../../components/home/cards/MItemCard.vue";
 
 export default {
   components: {

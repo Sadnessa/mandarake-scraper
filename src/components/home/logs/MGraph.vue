@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import MCard from "./base/MCard.vue";
-import MChart from "../components/base/MChart.vue";
+import MCard from "../../base/MCard.vue";
+import MChart from "../../base/MChart.vue";
 
 export default {
   components: {

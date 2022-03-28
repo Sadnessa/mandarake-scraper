@@ -42,9 +42,9 @@
 </template>
 
 <script>
-import MButton from "./base/MButton.vue";
-import MInput from "./base/MInput.vue";
-import MCard from "./base/MCard.vue";
+import MButton from "../base/MButton.vue";
+import MInput from "../base/MInput.vue";
+import MCard from "../base/MCard.vue";
 
 export default {
   components: {

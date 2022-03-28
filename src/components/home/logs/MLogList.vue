@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import MCard from "./base/MCard.vue";
+import MCard from "../../base/MCard.vue";
 
 export default {
   components: {

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import MHeader from "../components/MHeader.vue";
-import MContent from "../components/MContent.vue";
+import MHeader from "../components/home/MHeader.vue";
+import MContent from "../components/home/MContent.vue";
 
 export default {
   name: "Home",
