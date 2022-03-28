@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MSignupCard from '../components/MSignupCard.vue'
+import MSignupCard from '../components/sign up/MSignupCard.vue'
 
 export default {
   components: {

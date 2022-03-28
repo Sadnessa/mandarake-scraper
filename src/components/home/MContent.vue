@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MSearch from "../components/MSearch.vue";
+import MSearch from "./MSearch.vue";
 
 export default {
   components: {

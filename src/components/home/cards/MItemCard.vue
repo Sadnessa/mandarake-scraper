@@ -22,9 +22,9 @@
 </template>
 
 <script>
-import MButton from "./base/MButton.vue";
-import MCard from "./base/MCard.vue";
-import MModal from "./base/MModal.vue";
+import MButton from "../../base/MButton.vue";
+import MCard from "../../base/MCard.vue";
+import MModal from "../../base/MModal.vue";
 
 export default {
   components: {
