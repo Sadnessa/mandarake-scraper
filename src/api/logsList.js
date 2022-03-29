@@ -1,62 +1,34 @@
 let logs = {
   1: [
     {
-      price: 43243,
-      date: "rerwe"
+      price: 100,
+      date: "May"
     },
 
     {
-      price: 43243,
-      date: "rerwe"
+      price: 200,
+      date: "Jun"
     },
 
     {
-      price: 43243,
+      price: 500,
       date: "rerwe"
     },
     
     {
-      price: 43243,
+      price: 100,
       date: "rerwe"
     },
 
     {
-      price: 43243,
+      price: 50,
       date: "rerwe"
     },
 
     {
-      price: 43243,
-      date: "rerwe"
+      price: 400,
+      date: "ьу"
     },
-    {
-      price: 43243,
-      date: "rerwe"
-    },
-
-    {
-      price: 43243,
-      date: "rerwe"
-    },
-
-    {
-      price: 43243,
-      date: "rerwe"
-    },
-    {
-      price: 43243,
-      date: "rerwe"
-    },
-
-    {
-      price: 43243,
-      date: "rerwe"
-    },
-
-    {
-      price: 43243,
-      date: "rerwe"
-    }
   ],
 
   2: [

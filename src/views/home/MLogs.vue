@@ -19,7 +19,7 @@
       </MCard>
     </div>
     <div class="main">
-      <MGraph></MGraph>
+      <MGraph :logs="logs"></MGraph>
       <MLogList :logs="logs"></MLogList>
     </div>
   </div>

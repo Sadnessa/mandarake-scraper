@@ -4,25 +4,6 @@
 
 <script>
 import Chart from "chart.js/auto";
-const DATA_COUNT = 12;
-const labels = [];
-for (let i = 0; i < DATA_COUNT; ++i) {
-  labels.push(i.toString());
-}
-const datapoints = [0, 20, 20, 60, 60, 120, 11, 180, 120, 125, 105, 200];
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      data: datapoints,
-
-      backgroundColor: "rgba(192, 132, 252, 0.2)",
-      fill: true,
-      cubicInterpolationMode: "monotone",
-      tension: 2,
-    },
-  ],
-};
 
 export default {
   data() {
@@ -31,11 +12,36 @@ export default {
     };
   },
 
+  props: {
+    dataset: {
+      type: Array,
+    },
+
+    labels: {
+      type: Array,
+    },
+  },
+
   methods: {
     initChart() {
-      this.chartInstance = new Chart(this.$refs.chart, {
+      if (this.chartInstance !== null) {
+        this.chartInstance.destroy();
+      }
+
+      this.chartInstance = new Chart(this.$refs.chart.getContext("2d"), {
         type: "line",
-        data: data,
+        data: {
+          labels: this.labels,
+          datasets: [
+            {
+              data: this.dataset,
+              backgroundColor: "rgba(192, 132, 252, 0.2)",
+              fill: true,
+              cubicInterpolationMode: "monotone",
+              tension: 2,
+            },
+          ],
+        },
         options: {
           responsive: true,
           elements: {
@@ -71,6 +77,15 @@ export default {
 
   mounted() {
     this.initChart();
+  },
+
+  watch: {
+    $props: {
+      handler() {
+        this.initChart();
+      },
+      deep: true,
+    },
   },
 };
 </script>

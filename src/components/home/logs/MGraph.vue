@@ -2,7 +2,7 @@
   <div class="graph">
     <h1>Dynamic</h1>
     <MCard>
-      <MChart></MChart>
+      <MChart :dataset="forDataset" :labels="forLabel"></MChart>
     </MCard>
   </div>
 </template>
@@ -15,6 +15,22 @@ export default {
   components: {
     MCard,
     MChart,
+  },
+
+  props: {
+    logs: {
+      type: Array,
+    },
+  },
+
+  computed: {
+    forDataset() {
+      return this.logs.map((obj) => obj.price);
+    },
+
+    forLabel() {
+      return this.logs.map((obj) => obj.date);
+    },
   },
 };
 </script>
