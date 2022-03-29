@@ -40,7 +40,7 @@ export default {
 
   .scroll-sec {
     @apply mb-10;
-    @apply overflow-y-scroll;
+    @apply overflow-y-auto;
     @apply overflow-x-hidden;
     scrollbar-gutter: stable;
     scrollbar-width: thin;
