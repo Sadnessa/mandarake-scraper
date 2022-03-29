@@ -74,7 +74,6 @@ export default {
 <style lang="scss" scoped>
 .logs {
   @apply flex flex-col;
-  @apply h-screen;
   @apply overflow-hidden;
 
   .item-title {
