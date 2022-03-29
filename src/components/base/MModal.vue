@@ -32,15 +32,34 @@ export default {
     },
   },
 
+  data() {
+    return {
+      resolve: null,
+    };
+  },
+
   methods: {
     onConfirm() {
       this.$emit("update:modelValue", false);
       this.$emit("confirm");
+      if (this.resolve !== null) {
+        this.resolve(true);
+      }
     },
 
     onDecline() {
       this.$emit("update:modelValue", false);
       this.$emit("decline");
+      if (this.resolve !== null) {
+        this.resolve(false);
+      }
+    },
+
+    show() {
+      this.$emit("update:modelValue", true);
+      return new Promise((resolve) => {
+        this.resolve = resolve;
+      });
     },
   },
 };

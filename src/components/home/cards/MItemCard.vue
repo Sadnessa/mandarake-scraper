@@ -11,32 +11,21 @@
           <router-link :to="'/logs/' + id">
             <MButton size="small" type="flat">View log</MButton>
           </router-link>
-          <MButton size="small" @click="doShowModal = true">Delete</MButton>
+          <MButton size="small" @click="$emit('delete', id)">Delete</MButton>
         </div>
       </div>
     </div>
-    <MModal v-model="doShowModal" @confirm="$emit('delete', id)">
-      Do you really want to delete this card?
-    </MModal>
   </MCard>
 </template>
 
 <script>
 import MButton from "../../base/MButton.vue";
 import MCard from "../../base/MCard.vue";
-import MModal from "../../base/MModal.vue";
 
 export default {
   components: {
     MButton,
     MCard,
-    MModal,
-  },
-
-  data() {
-    return {
-      doShowModal: false,
-    };
   },
 
   props: {

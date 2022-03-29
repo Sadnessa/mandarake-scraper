@@ -1,24 +1,39 @@
 <template>
   <div class="cards-sec" ref="list">
     <TransitionGroup name="list">
+      <div class="empty-list" v-if="cards.length == 0">
+        There is nothing to show.
+      </div>
       <MItemCard
+        v-else
         v-for="card in cards"
         :key="card.id"
         v-bind="card"
-        @delete="deleteItem"
+        @delete="onDelete"
       ></MItemCard>
     </TransitionGroup>
+    <MModal ref="modal" v-model="doShowModal">
+      Do you really want to delete this card?
+    </MModal>
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from "pinia";
-import { useCards } from "../../store/cards"
+import { useCards } from "../../store/cards";
 import MItemCard from "../../components/home/cards/MItemCard.vue";
+import MModal from "../../components/base/MModal.vue";
 
 export default {
   components: {
     MItemCard,
+    MModal,
+  },
+
+  data() {
+    return {
+      doShowModal: false,
+    };
   },
 
   computed: {
@@ -40,17 +55,25 @@ export default {
         this.scrollListToBottom();
       });
     },
+
+    onDelete(id) {
+      this.$refs.modal.show().then((result) => {
+        if (result == true) {
+          this.deleteItem(id);
+        }
+      });
+    },
   },
 
   watch: {
-    cards (newValue, oldValue) {
-      if(!oldValue) {
-        return
+    cards(newValue, oldValue) {
+      if (!oldValue) {
+        return;
       }
       if (newValue.length - oldValue.length == 1) {
-        this.onCardAdded()
+        this.onCardAdded();
       }
-    }
+    },
   },
 
   created() {
