@@ -65,7 +65,7 @@ export default {
     @apply text-neutral-500;
   }
 
-  .inpt {
+  .input {
     @apply mb-3;
   }
 
