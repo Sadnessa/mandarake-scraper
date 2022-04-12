@@ -3,28 +3,28 @@
     <h1>Sign up</h1>
 
     <p>Username</p>
-    <MInput v-model="usernameText">
-       <template #icon>
+    <MInput v-model="usernameText" :v="v$.usernameText">
+      <template #icon>
         <span class="material-icons-round"> person </span>
       </template>
     </MInput>
 
     <p>Email</p>
-    <MInput v-model="emailText">
-       <template #icon>
+    <MInput v-model="emailText" :v="v$.emailText">
+      <template #icon>
         <span class="material-icons-round"> alternate_email </span>
       </template>
     </MInput>
 
     <p>Password</p>
-    <MInput v-model="passwordText">
+    <MInput v-model="passwordText" :v="v$.passwordText">
       <template #icon>
         <span class="material-icons-round"> vpn_key </span>
       </template>
     </MInput>
 
     <p>Confirm password</p>
-    <MInput v-model="confirmPasswordText">
+    <MInput v-model="confirmPasswordText" :v="v$.confirmPasswordText">
       <template #icon>
         <span class="material-icons-round"> vpn_key </span>
       </template>
@@ -42,6 +42,9 @@
 </template>
 
 <script>
+import useVuelidate from "@vuelidate/core";
+import { required } from "@vuelidate/validators";
+
 import MButton from "../base/MButton.vue";
 import MInput from "../base/MInput.vue";
 import MCard from "../base/MCard.vue";
@@ -53,14 +56,29 @@ export default {
     MCard,
   },
 
+  setup() {
+    return {
+      v$: useVuelidate(),
+    };
+  },
+
   data() {
     return {
       usernameText: "",
       emailText: "",
       passwordText: "",
       confirmPasswordText: "",
-    }
-  }
+    };
+  },
+
+  validations() {
+    return {
+      usernameText: { required },
+      emailText: { required },
+      passwordText: { required },
+      confirmPasswordText: { required },
+    };
+  },
 };
 </script>
 
@@ -79,10 +97,6 @@ export default {
     @apply font-semibold text-xs;
     @apply pb-1;
     @apply text-neutral-500;
-  }
-
-  .inpt {
-    @apply mb-3;
   }
 
   .btns {
