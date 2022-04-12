@@ -81,10 +81,6 @@ export default {
     @apply text-neutral-500;
   }
 
-  .input {
-    @apply mb-3;
-  }
-
   .btns {
     @apply flex;
     @apply mt-2;
