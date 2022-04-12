@@ -8,10 +8,10 @@
         :placeholder="placeholder"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
-        @blur="v.$validate"
+        @blur="v && v.$validate()"
       />
     </div>
-    <div class="errors">
+    <div class="errors" v-if="v">
       <div class="error" v-for="error in v.$errors" :key="error.$uid">
         {{ error.$message }}
       </div>
@@ -32,7 +32,6 @@ export default {
 
     v: {
       type: Object,
-      default: {},
     },
 
     active: {
@@ -43,6 +42,9 @@ export default {
 
   computed: {
     errorClass() {
+      if (!this.v) {
+        return {};
+      }
       return {
         "inpt--error": this.v.$invalid && this.v.$dirty,
         "inpt--good": !this.v.$error,
@@ -64,8 +66,8 @@ export default {
     @apply cursor-text;
 
     &.inpt--error {
-        @apply bg-red-300/40;
-      }
+      @apply bg-red-300/40;
+    }
 
     .icon-wrap {
       @apply flex items-center;

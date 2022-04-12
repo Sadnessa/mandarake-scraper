@@ -47,7 +47,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .search-sec {
   @apply flex items-center justify-between;
   @apply flex-col sm:flex-row;
@@ -60,6 +60,12 @@ export default {
 
   .col {
     @apply flex items-center;
+
+    .input {
+      .inpt {
+        @apply mb-0;
+      }
+    }
 
     * {
       @apply mr-2;
