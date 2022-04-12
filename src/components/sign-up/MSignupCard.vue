@@ -43,7 +43,7 @@
 
 <script>
 import useVuelidate from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
+import { required, sameAs } from "@vuelidate/validators";
 
 import MButton from "../base/MButton.vue";
 import MInput from "../base/MInput.vue";
@@ -76,7 +76,7 @@ export default {
       usernameText: { required },
       emailText: { required },
       passwordText: { required },
-      confirmPasswordText: { required },
+      confirmPasswordText: { required, sameAsPassword: sameAs(this.passwordText) },
     };
   },
 };
