@@ -1,6 +1,6 @@
 <template>
   <div class="input">
-    <div class="inpt" tabindex="0">
+    <div class="inpt" tabindex="0" :class="errorClass">
       <div class="icon-wrap" v-if="$slots.icon">
         <slot name="icon"></slot>
       </div>
@@ -34,6 +34,20 @@ export default {
       type: Object,
       default: {},
     },
+
+    active: {
+      type: Boolean,
+      default: false,
+    },
+  },
+
+  computed: {
+    errorClass() {
+      return {
+        "inpt--error": this.v.$invalid && this.v.$dirty,
+        "inpt--good": !this.v.$error,
+      };
+    },
   },
 };
 </script>
@@ -45,9 +59,13 @@ export default {
   .inpt {
     @apply flex;
     @apply bg-neutral-300;
-    @apply px-3 py-1.5 mb-1; 
+    @apply px-3 py-1.5 mb-1;
     @apply box-border rounded-lg;
     @apply cursor-text;
+
+    &.inpt--error {
+        @apply bg-red-300/40;
+      }
 
     .icon-wrap {
       @apply flex items-center;
@@ -58,7 +76,7 @@ export default {
     }
 
     input {
-      @apply bg-neutral-300;
+      @apply bg-transparent;
       @apply w-full py-1;
       @apply font-medium text-sm;
 
@@ -74,6 +92,11 @@ export default {
     &:focus,
     &:focus-within {
       @apply outline-dashed outline-2 outline-purple-500;
+
+      //don't have any errors
+      &.inpt--good {
+        @apply bg-green-400/40;
+      }
     }
   }
 
@@ -81,7 +104,9 @@ export default {
     @apply flex flex-col items-center;
     @apply h-full;
     min-height: 16px;
-    @apply text-xs font-bold;
+    @apply font-bold;
+    font-size: 10px;
+    @apply text-red-500;
   }
 }
 </style>
