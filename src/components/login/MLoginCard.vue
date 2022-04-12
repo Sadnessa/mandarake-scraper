@@ -3,14 +3,14 @@
     <h1>Log in</h1>
 
     <p>Username</p>
-    <MInput v-model="usernameText">
+    <MInput v-model="usernameText" :v="v$.usernameText">
       <template #icon>
         <span class="material-icons-round"> person </span>
       </template>
     </MInput>
 
     <p>Password</p>
-    <MInput v-model="passwordText">
+    <MInput v-model="passwordText" :v="v$.passwordText">
       <template #icon>
         <span class="material-icons-round"> vpn_key </span>
       </template>
@@ -28,6 +28,9 @@
 </template>
 
 <script>
+import useVuelidate from "@vuelidate/core";
+import { required } from "@vuelidate/validators";
+
 import MButton from "../base/MButton.vue";
 import MInput from "../base/MInput.vue";
 import MCard from "../base/MCard.vue";
@@ -39,10 +42,23 @@ export default {
     MCard,
   },
 
+  setup() {
+    return {
+      v$: useVuelidate(),
+    };
+  },
+
   data() {
     return {
       usernameText: "",
       passwordText: "",
+    };
+  },
+
+  validations() {
+    return {
+      usernameText: { required },
+      passwordText: { required },
     };
   },
 };
