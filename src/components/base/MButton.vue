@@ -79,8 +79,11 @@ export default {
   &--flat {
     @apply bg-transparent;
     @apply text-purple-500;
-    @apply hover:bg-purple-200;
     @apply border-purple-400;
+
+    &:not(.btn--disabled) {
+      @apply hover:bg-purple-200;
+    }
   }
 
   //sizes
