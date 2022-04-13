@@ -103,7 +103,7 @@ export default {
   }
 
   .errors {
-    @apply flex flex-col items-center;
+    @apply flex justify-around;
     @apply h-full;
     min-height: 16px;
     @apply font-bold;
