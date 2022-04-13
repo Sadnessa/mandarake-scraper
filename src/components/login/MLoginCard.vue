@@ -21,7 +21,7 @@
         <MButton type="flat">Sign up</MButton>
       </router-link>
       <router-link to="/">
-        <MButton>Log in</MButton>
+        <MButton :disabled="v$.$invalid">Log in</MButton>
       </router-link>
     </div>
   </MCard>
