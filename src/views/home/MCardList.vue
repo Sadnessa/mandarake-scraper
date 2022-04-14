@@ -101,7 +101,7 @@ export default {
   .empty-list {
     @apply flex flex-col justify-center items-center;
     @apply grow;
-    @apply text-black/90;
+    @apply text-black/80;
 
     h1 {
       @apply font-bold text-lg;
