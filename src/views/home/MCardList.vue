@@ -2,10 +2,12 @@
   <div class="cards-sec" ref="list">
     <TransitionGroup name="list">
       <div class="empty-list" v-if="noCardsMessage">
-        There is nothing to show.
+        <span class="material-icons-round"> search </span>
+        <h1>There is nothing to show.</h1>
+        <p>Use "Add link" and wait for magic!</p>
       </div>
       <MItemCard
-        v-else  
+        v-else
         v-for="card in cards"
         :key="card.id"
         v-bind="card"
@@ -39,8 +41,8 @@ export default {
   computed: {
     ...mapState(useCards, ["cards", "isLoading"]),
     noCardsMessage() {
-      return this.cards.length === 0 && !this.isLoading ? true : false
-    }
+      return this.cards.length === 0 && !this.isLoading ? true : false;
+    },
   },
 
   methods: {
@@ -87,6 +89,7 @@ export default {
 
 <style lang="scss">
 .cards-sec {
+  @apply flex flex-col;
   position: relative;
   @apply overflow-y-auto;
   @apply overflow-x-hidden;
@@ -94,6 +97,22 @@ export default {
   scrollbar-gutter: stable;
   scrollbar-width: thin;
   @apply mb-10;
+
+  .empty-list {
+    @apply flex flex-col justify-center items-center;
+    @apply grow;
+    @apply text-black/90;
+
+    h1 {
+      @apply font-bold text-lg;
+    }
+
+    span {
+      @apply text-7xl text-black/30;
+      @apply mb-2.5;
+      @apply select-none;
+    }
+  }
 
   .card {
     @apply mb-4;
