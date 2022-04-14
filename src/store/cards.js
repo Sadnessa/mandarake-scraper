@@ -5,14 +5,16 @@ export const useCards = defineStore('cards', {
   state: () => {
     return {
       cards: [],
+      isLoading: false,
     }
   },
 
   actions: {
     loadCards() {
+      this.isLoading = true
       itemList().then((value) => {
         this.cards = value;
-      });
+      }).then(() => this.isLoading = false);
     },
 
     deleteItem(deletedID) {

@@ -1,11 +1,11 @@
 <template>
   <div class="cards-sec" ref="list">
     <TransitionGroup name="list">
-      <div class="empty-list" v-if="cards.length == 0">
+      <div class="empty-list" v-if="noCardsMessage">
         There is nothing to show.
       </div>
       <MItemCard
-        v-else
+        v-else  
         v-for="card in cards"
         :key="card.id"
         v-bind="card"
@@ -37,7 +37,10 @@ export default {
   },
 
   computed: {
-    ...mapState(useCards, ["cards"]),
+    ...mapState(useCards, ["cards", "isLoading"]),
+    noCardsMessage() {
+      return this.cards.length === 0 && !this.isLoading ? true : false
+    }
   },
 
   methods: {
