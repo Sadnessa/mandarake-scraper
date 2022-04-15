@@ -1,22 +1,24 @@
 <template>
-  <div class="cards-sec" ref="list">
-    <TransitionGroup name="list">
-      <div class="empty-list" v-if="noCardsMessage">
-        <span class="material-icons-round"> search </span>
-        <h1>There is nothing to show.</h1>
-        <p>Use "Add link" and wait for magic!</p>
-      </div>
-      <MItemCard
-        v-else
-        v-for="card in cards"
-        :key="card.id"
-        v-bind="card"
-        @delete="onDelete"
-      ></MItemCard>
-    </TransitionGroup>
-    <MModal ref="modal" v-model="doShowModal">
-      Do you really want to delete this card?
-    </MModal>
+  <div class="cards-sec">
+    <div class="cards-wrapper" ref="list">
+      <TransitionGroup name="list">
+        <div class="empty-list" v-if="noCardsMessage">
+          <span class="material-icons-round"> search </span>
+          <h1>There is nothing to show.</h1>
+          <p>Use "Add link" and wait for magic!</p>
+        </div>
+        <MItemCard
+          v-else
+          v-for="card in cards"
+          :key="card.id"
+          v-bind="card"
+          @delete="onDelete"
+        ></MItemCard>
+      </TransitionGroup>
+      <MModal ref="modal" v-model="doShowModal">
+        Do you really want to delete this card?
+      </MModal>
+    </div>
   </div>
 </template>
 
@@ -90,35 +92,39 @@ export default {
 <style lang="scss">
 .cards-sec {
   @apply flex flex-col;
-  position: relative;
+  @apply relative;
   @apply overflow-y-auto;
   @apply overflow-x-hidden;
   @apply grow;
   scrollbar-gutter: stable;
   scrollbar-width: thin;
-  @apply mb-10;
+  @apply mb-10 px-2;
 
-  .empty-list {
-    @apply flex flex-col justify-center items-center;
-    @apply grow;
-    @apply text-black/80;
+  .cards-wrapper {
+    @apply relative;
 
-    h1 {
-      @apply font-bold text-lg;
+    .empty-list {
+      @apply flex flex-col justify-center items-center;
+      @apply grow;
+      @apply text-black/80;
+
+      h1 {
+        @apply font-bold text-lg;
+      }
+
+      span {
+        @apply text-7xl text-black/30;
+        @apply mb-2.5;
+        @apply select-none;
+      }
     }
 
-    span {
-      @apply text-7xl text-black/30;
-      @apply mb-2.5;
-      @apply select-none;
-    }
-  }
+    .card {
+      @apply mb-4;
 
-  .card {
-    @apply mb-4;
-
-    &:last-child {
-      @apply mb-1.5;
+      &:last-child {
+        @apply mb-1.5;
+      }
     }
   }
 }
@@ -137,6 +143,6 @@ export default {
 }
 
 .list-leave-active {
-  position: absolute;
+  @apply absolute;
 }
 </style>
