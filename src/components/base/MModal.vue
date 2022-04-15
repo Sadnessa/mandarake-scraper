@@ -1,19 +1,21 @@
 <template>
-  <Transition name="fade" mode="out-in">
-    <div class="modal" v-if="modelValue">
-      <MCard>
-        <h1>Confirm</h1>
-        <p>
-          <slot></slot>
-        </p>
-        <div class="btns">
-          <MButton type="flat" @click="onDecline">Decline</MButton>
-          <MButton @click="onConfirm">Confirm</MButton>
-        </div>
-      </MCard>
-      <div class="modal__overlay"></div>
-    </div>
-  </Transition>
+  <Teleport to="body">
+    <Transition name="fade" mode="out-in">
+      <div class="modal" v-if="modelValue">
+        <MCard>
+          <h1>Confirm</h1>
+          <p>
+            <slot></slot>
+          </p>
+          <div class="btns">
+            <MButton type="flat" @click="onDecline">Decline</MButton>
+            <MButton @click="onConfirm">Confirm</MButton>
+          </div>
+        </MCard>
+        <div class="modal__overlay"></div>
+      </div>
+    </Transition>
+  </Teleport>
 </template>
 
 <script>
@@ -62,6 +64,16 @@ export default {
       });
     },
   },
+
+  watch: {
+    modelValue(newValue) {
+      if (newValue) {
+        document.querySelector('#app').style.filter = 'blur(0.3rem)';
+      } else {
+        document.querySelector('#app').style.filter = 'blur(0rem)'
+      }
+    }
+  }
 };
 </script>
 
