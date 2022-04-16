@@ -3,8 +3,14 @@
     <MCard>
       <h1>Welcome, user</h1>
       <div class="btns-col">
-        <MButton rounded>
-          <span class="material-icons-round"> color_lens </span>
+        <div class="themes" v-if="doShowThemes">
+          <div class="themes__item" v-for="i in themes" :key="i.name">gfgf</div>
+        </div>
+        <MButton rounded @click="onClick">
+          <span class="material-icons-round" v-if="doShowThemes">
+            chevron_right
+          </span>
+          <span class="material-icons-round" v-else> color_lens </span>
         </MButton>
         <router-link to="/login">
           <MButton>
@@ -27,6 +33,40 @@ export default {
   components: {
     MButton,
     MCard,
+  },
+
+  data() {
+    return {
+      doShowThemes: false,
+      themes: [
+        {
+          name: "",
+          color: "",
+        },
+        {
+          name: "",
+          color: "",
+        },
+        {
+          name: "",
+          color: "",
+        },
+        {
+          name: "",
+          color: "",
+        },
+        {
+          name: "",
+          color: "",
+        },
+      ],
+    };
+  },
+
+  methods: {
+    onClick() {
+      this.doShowThemes = !this.doShowThemes;
+    },
   },
 };
 </script>
@@ -51,6 +91,10 @@ export default {
       &:last-child {
         @apply mr-0;
       }
+    }
+
+    .themes {
+      @apply flex;
     }
   }
 }
