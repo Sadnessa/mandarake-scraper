@@ -33,6 +33,9 @@
 </template>
 
 <script>
+import { mapState } from 'pinia';
+import { useThemes } from "../../store/themes";
+
 import MButton from "../base/MButton.vue";
 import MCard from "../base/MCard.vue";
 
@@ -67,8 +70,11 @@ export default {
           color: "#ea9e74",
         },
       ],
-      currentTheme: "base",
     };
+  },
+
+  computed: {
+    ...mapState(useThemes, ['currentTheme'])
   },
 
   methods: {
