@@ -9,7 +9,7 @@
             v-for="i in themes"
             :key="i.name"
             :style="{ background: i.color }"
-            :class="{'themes__item--active' : i.name == currentTheme }"
+            :class="{ 'themes__item--active': i.name == currentTheme }"
             @click="onSelectTheme(i.name)"
           ></div>
         </div>
@@ -78,7 +78,7 @@ export default {
 
     onSelectTheme(name) {
       this.currentTheme = name;
-    }
+    },
   },
 };
 </script>
@@ -109,9 +109,27 @@ export default {
       @apply flex;
 
       &__item {
+        @apply relative;
         @apply h-5 w-5;
         @apply rounded-full;
         @apply cursor-pointer;
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          background: transparent;
+          transition: all ease-in-out 0.2s;
+        }
+
+        &:hover {
+          &::after {
+            background: rgba(255, 255, 255, 0.2);
+          }
+        }
 
         &--active {
           @apply outline outline-gray-500/20 outline-4;
