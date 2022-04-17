@@ -4,9 +4,16 @@
       <h1>Welcome, user</h1>
       <div class="btns-col">
         <div class="themes" v-if="doShowThemes">
-          <div class="themes__item" v-for="i in themes" :key="i.name">gfgf</div>
+          <div
+            class="themes__item"
+            v-for="i in themes"
+            :key="i.name"
+            :style="{ background: i.color }"
+            :class="{'themes__item--active' : i.name == currentTheme }"
+            @click="onSelectTheme(i.name)"
+          ></div>
         </div>
-        <MButton rounded @click="onClick">
+        <MButton rounded @click="onShowThemes">
           <span class="material-icons-round" v-if="doShowThemes">
             chevron_right
           </span>
@@ -40,33 +47,38 @@ export default {
       doShowThemes: false,
       themes: [
         {
-          name: "",
-          color: "",
+          name: "base",
+          color: "#c084fc",
         },
         {
-          name: "",
-          color: "",
+          name: "fd",
+          color: "#579adb",
         },
         {
-          name: "",
-          color: "",
+          name: "ss",
+          color: "#209f91",
         },
         {
-          name: "",
-          color: "",
+          name: "fff",
+          color: "#d99ea0",
         },
         {
-          name: "",
-          color: "",
+          name: "ggg",
+          color: "#ea9e74",
         },
       ],
+      currentTheme: "base",
     };
   },
 
   methods: {
-    onClick() {
+    onShowThemes() {
       this.doShowThemes = !this.doShowThemes;
     },
+
+    onSelectTheme(name) {
+      this.currentTheme = name;
+    }
   },
 };
 </script>
@@ -95,6 +107,16 @@ export default {
 
     .themes {
       @apply flex;
+
+      &__item {
+        @apply h-5 w-5;
+        @apply rounded-full;
+        @apply cursor-pointer;
+
+        &--active {
+          @apply outline outline-gray-500/20 outline-4;
+        }
+      }
     }
   }
 }
