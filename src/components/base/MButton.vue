@@ -50,11 +50,11 @@ export default {
 
 <style lang="scss" scoped>
 .btn {
-  @apply transition-colors duration-300;
+  @apply transition-all duration-300;
   @apply px-4 py-1.5 rounded-md;
   @apply font-bold text-sm;
   @apply box-border;
-  @apply border-2 border-purple-500;
+  @apply border-2 border-skin-button-fill;
 
   .content {
     @apply flex items-center justify-center;
@@ -68,21 +68,21 @@ export default {
 
   //types
   &--solid {
-    @apply bg-purple-500;
-    @apply text-white;
+    @apply bg-skin-fill;
+    @apply text-skin-text-button;
 
     &:not(.btn--disabled) {
-      @apply hover:bg-purple-400 hover:border-purple-400;
+      @apply hover:opacity-80;
     }
   }
 
   &--flat {
-    @apply bg-transparent;
-    @apply text-purple-500;
-    @apply border-purple-400;
+    @apply bg-skin-button-flat;
+    @apply text-skin-text-button-flat;
+    @apply border-skin-button-flat;
 
     &:not(.btn--disabled) {
-      @apply hover:bg-purple-200;
+      @apply hover:bg-skin-button-flat-hover;
     }
   }
 
