@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { mapState } from 'pinia';
+import { mapWritableState } from 'pinia';
 import { useThemes } from '../../store/themes';
 
 import MButton from "../base/MButton.vue";
@@ -58,15 +58,15 @@ export default {
           color: "#579adb",
         },
         {
-          name: "ss",
+          name: "emerald",
           color: "#209f91",
         },
         {
-          name: "fff",
+          name: "coffee",
           color: "#d99ea0",
         },
         {
-          name: "ggg",
+          name: "orange",
           color: "#ea9e74",
         },
       ],
@@ -74,7 +74,7 @@ export default {
   },
 
   computed: {
-    ...mapState(useThemes, ['currentTheme'])
+    ...mapWritableState(useThemes, ['currentTheme'])
   },
 
   methods: {
