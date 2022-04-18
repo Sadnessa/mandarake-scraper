@@ -13,5 +13,58 @@
     --color-button-flat: transparent;
     --color-button-flat-hover: #E9D5FF;
     --color-button-flat-border: #C084FC;
+    --color-outline: #A855F7;
+  }
+
+  .aqua {
+    --color-text-base: #121718;
+    --color-text-secondary: #6b686a;
+    --color-text-button: #fafafc;
+    --color-text-button-flat: #579ADB;
+    --color-fill: #579ADB; 
+    --color-button-border: #579ADB;
+    --color-button-flat: transparent;
+    --color-button-flat-hover: #e3f1ff;
+    --color-button-flat-border: #86b4e3;
+    --color-outline: #579ADB;
+  }
+
+  .emerald {
+    --color-text-base: #121718;
+    --color-text-secondary: #6b686a;
+    --color-text-button: #fafafc;
+    --color-text-button-flat: #209F91;
+    --color-fill: #209F91; 
+    --color-button-border: #209F91;
+    --color-button-flat: transparent;
+    --color-button-flat-hover: #e3f1ff;
+    --color-button-flat-border: #86b4e3;
+    --color-outline: #209F91;
+  }
+
+  .cofee {
+    --color-text-base: #121718;
+    --color-text-secondary: #6b686a;
+    --color-text-button: #fafafc;
+    --color-text-button-flat: #209F91;
+    --color-fill: #209F91; 
+    --color-button-border: #209F91;
+    --color-button-flat: transparent;
+    --color-button-flat-hover: #e3f1ff;
+    --color-button-flat-border: #86b4e3;
+    --color-outline: #209F91;
+  }
+
+  .orange {
+    --color-text-base: #121718;
+    --color-text-secondary: #6b686a;
+    --color-text-button: #fafafc;
+    --color-text-button-flat: #EA9E74;
+    --color-fill: #EA9E74; 
+    --color-button-border: #EA9E74;
+    --color-button-flat: transparent;
+    --color-button-flat-hover: #e3f1ff;
+    --color-button-flat-border: #86b4e3;
+    --color-outline: #EA9E74;
   }
 }

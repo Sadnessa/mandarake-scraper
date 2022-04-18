@@ -31,6 +31,12 @@ module.exports = {
           'button-fill': 'var(--color-button-border)',
           'button-flat': 'var(--color-button-flat-border)',
         }
+      },
+
+      outlineColor: {
+        skin: {
+          'line': 'var(--color-outline)'
+        }
       }
     },
   },
