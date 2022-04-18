@@ -34,7 +34,7 @@
 
 <script>
 import { mapState } from 'pinia';
-import { useThemes } from "../../store/themes";
+import { useThemes } from '../../store/themes';
 
 import MButton from "../base/MButton.vue";
 import MCard from "../base/MCard.vue";
@@ -54,7 +54,7 @@ export default {
           color: "#c084fc",
         },
         {
-          name: "fd",
+          name: "aqua",
           color: "#579adb",
         },
         {
