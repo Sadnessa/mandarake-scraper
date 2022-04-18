@@ -93,7 +93,7 @@ export default {
 
     &:focus,
     &:focus-within {
-      @apply outline-dashed outline-2 outline-purple-500;
+      @apply outline-dashed outline-2 outline-skin-line;
 
       //don't have any errors
       &.inpt--good {

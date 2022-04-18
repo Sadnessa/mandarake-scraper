@@ -1,9 +1,11 @@
 <template>
-  <router-view v-slot="{ Component }">
-    <Transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </Transition>
-  </router-view>
+  <div class="emerald">
+    <router-view v-slot="{ Component }">
+      <Transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </Transition>
+    </router-view>
+  </div>
 </template>
 
 <style lang="scss">
@@ -21,7 +23,8 @@ body {
   @apply bg-neutral-200;
 }
 
-.material-icons, .material-icons-round {
+.material-icons,
+.material-icons-round {
   font-size: inherit;
   font-weight: inherit;
 }

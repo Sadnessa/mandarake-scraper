@@ -88,7 +88,7 @@ export default {
   @apply max-w-sm;
 
   h1 {
-    @apply border-b-2 border-dashed border-purple-500;
+    @apply border-b-2 border-dashed border-skin-button-fill;
     @apply mb-3 pb-2;
     @apply font-bold text-lg text-center;
   }
