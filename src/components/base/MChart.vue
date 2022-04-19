@@ -28,6 +28,10 @@ export default {
         this.chartInstance.destroy();
       }
 
+      let bgColor = getComputedStyle(this.$refs.chart).getPropertyValue(
+        "--color-fill"
+      );
+
       this.chartInstance = new Chart(this.$refs.chart.getContext("2d"), {
         type: "line",
         data: {
@@ -35,7 +39,7 @@ export default {
           datasets: [
             {
               data: this.dataset,
-              backgroundColor: "rgba(192, 132, 252, 0.2)",
+              backgroundColor: `rgba(${bgColor}, 0.2)`,
               fill: true,
               cubicInterpolationMode: "monotone",
               tension: 2,
@@ -46,11 +50,11 @@ export default {
           responsive: true,
           elements: {
             line: {
-              borderColor: "#c084fc",
+              borderColor: `rgba(${bgColor}, 1)`,
               borderWidth: 2,
             },
             point: {
-              borderColor: "#c084fc",
+              borderColor: `rgba(${bgColor}, 1)`,
               borderWidth: 1,
             },
           },
