@@ -4,6 +4,7 @@ export const useThemes = defineStore('themes', {
   state: () => {
     return {
       currentTheme: 'base',
+      darkMode: false,
     }
   }
 })

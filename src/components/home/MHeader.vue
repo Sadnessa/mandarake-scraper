@@ -19,6 +19,12 @@
           </span>
           <span class="material-icons-round" v-else> color_lens </span>
         </MButton>
+         <MButton rounded @click="onDarkMode">
+          <span class="material-icons-round" v-if="darkMode">
+            dark_mode
+          </span>
+          <span class="material-icons-round" v-else>light_mode</span>
+        </MButton>
         <router-link to="/login">
           <MButton>
             <template #icon>
@@ -63,18 +69,22 @@ export default {
         },
         {
           name: "coffee",
-          color: "#d99ea0",
+          color: "#a25f47",
         },
         {
           name: "orange",
           color: "#ea9e74",
+        },
+        {
+          name: "pink",
+          color: "#e396a0",
         },
       ],
     };
   },
 
   computed: {
-    ...mapWritableState(useThemes, ['currentTheme'])
+    ...mapWritableState(useThemes, ['currentTheme', 'darkMode'])
   },
 
   methods: {
@@ -85,6 +95,10 @@ export default {
     onSelectTheme(name) {
       this.currentTheme = name;
     },
+
+    onDarkMode() {
+      this.darkMode = !this.darkMode;
+    }
   },
 };
 </script>

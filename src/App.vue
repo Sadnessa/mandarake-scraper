@@ -12,7 +12,7 @@ import { useThemes } from "./store/themes";
 
 export default {
   computed: {
-    ...mapWritableState(useThemes, ["currentTheme"]),
+    ...mapWritableState(useThemes, ["currentTheme", 'darkMode']),
   },
 
   watch: {
@@ -26,6 +26,14 @@ export default {
 
       localStorage.setItem("themes", newValue);
     },
+
+    darkMode(newValue) {
+      if (newValue) {
+        document.querySelector("body").classList.add('dark');
+      } else {
+        document.querySelector("body").classList.remove('dark');
+      }
+    }
   },
 
   mounted() {
