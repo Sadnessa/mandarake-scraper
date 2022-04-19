@@ -27,9 +27,9 @@ export default {
 
   &:after {
     content: "";
+    background-image: linear-gradient(to top, var(--color-bg), transparent);
     @apply absolute left-0 right-0 bottom-0;
     @apply w-full h-28;
-    @apply bg-gradient-to-t from-neutral-200 to-transparent;
     @apply pointer-events-none;
     @apply z-0;
   }
