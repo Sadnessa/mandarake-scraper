@@ -2,69 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer themes {
   :root {
-    --color-text-base: #121718;
-    --color-text-secondary: #6b686a;
-    --color-text-button: #fafafc;
     --color-text-button-flat: #A855F7;
-    --color-fill: #A855F7; 
+    --color-fill: 168, 85, 247; 
     --color-button-border: #A855F7;
-    --color-button-flat: transparent;
-    --color-button-flat-hover: #E9D5FF;
     --color-button-flat-border: #C084FC;
     --color-outline: #A855F7;
   }
 
   .aqua {
-    --color-text-base: #121718;
-    --color-text-secondary: #6b686a;
-    --color-text-button: #fafafc;
     --color-text-button-flat: #579ADB;
-    --color-fill: #579ADB; 
+    --color-fill: 87, 154, 219; 
     --color-button-border: #579ADB;
-    --color-button-flat: transparent;
-    --color-button-flat-hover: #e3f1ff;
     --color-button-flat-border: #86b4e3;
     --color-outline: #579ADB;
   }
 
   .emerald {
-    --color-text-base: #121718;
-    --color-text-secondary: #6b686a;
-    --color-text-button: #fafafc;
     --color-text-button-flat: #209F91;
-    --color-fill: #209F91; 
+    --color-fill: 32, 159, 145; 
     --color-button-border: #209F91;
-    --color-button-flat: transparent;
-    --color-button-flat-hover: #e3f1ff;
-    --color-button-flat-border: #86b4e3;
+    --color-button-flat-border: #59BAAD;
     --color-outline: #209F91;
   }
 
-  .cofee {
-    --color-text-base: #121718;
-    --color-text-secondary: #6b686a;
-    --color-text-button: #fafafc;
-    --color-text-button-flat: #209F91;
-    --color-fill: #209F91; 
-    --color-button-border: #209F91;
-    --color-button-flat: transparent;
-    --color-button-flat-hover: #e3f1ff;
-    --color-button-flat-border: #86b4e3;
-    --color-outline: #209F91;
+  .coffee {
+    --color-text-button-flat: #a25f47;
+    --color-fill: 162, 95, 71; 
+    --color-button-border: #a25f47;
+    --color-button-flat-border: #BF785F;
+    --color-outline: #a25f47;
   }
 
   .orange {
+    --color-text-button-flat: #ffbb48;
+    --color-fill: 255, 187, 72; 
+    --color-button-border: #ffbb48;
+    --color-button-flat-border: #FFCC66;
+    --color-outline: #ffbb48;
+  }
+
+  .pink {
+    --color-text-button-flat: #e396a0;
+    --color-fill: 227, 150, 160 ; 
+    --color-button-border: #e396a0;
+    --color-button-flat-border: #E3ADB4;
+    --color-outline: #e396a0;
+  }
+}
+
+@layer modes {
+  :root {
     --color-text-base: #121718;
     --color-text-secondary: #6b686a;
     --color-text-button: #fafafc;
-    --color-text-button-flat: #EA9E74;
-    --color-fill: #EA9E74; 
-    --color-button-border: #EA9E74;
-    --color-button-flat: transparent;
-    --color-button-flat-hover: #e3f1ff;
-    --color-button-flat-border: #86b4e3;
-    --color-outline: #EA9E74;
+    --color-card: #fafafc;
+    --color-bg: #E5E5E5;
+    --color-input: #D4D4D4;
+  }
+
+  .dark {
+    --color-text-base: #fafafc;
+    --color-text-secondary: #6b686a;
+    --color-text-button: #fafafc;
+    --color-card: #242424;
+    --color-bg: #141414;
+    --color-input: #D4D4D4;
   }
 }
