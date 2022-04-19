@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import { useThemes } from "../../store/themes";
+import { mapWritableState } from "pinia";
 import Chart from "chart.js/auto";
 
 export default {
@@ -22,7 +24,40 @@ export default {
     },
   },
 
+  computed: {
+    ...mapWritableState(useThemes, ["currentTheme"]),
+  },
+
   methods: {
+    // updateChart() {
+    //   let bgColor = getComputedStyle(this.$refs.chart).getPropertyValue(
+    //     "--color-fill"
+    //   );
+
+    //   this.chartInstance.options.elements = {
+    //     line: {
+    //       borderColor: `rgba(${bgColor}, 1)`,
+    //       borderWidth: 2,
+    //     },
+    //     point: {
+    //       borderColor: `rgba(${bgColor}, 1)`,
+    //       borderWidth: 1,
+    //     },
+    //   };
+
+    //   this.chartInstance.data.datasets = [
+    //     {
+    //       data: this.dataset,
+    //       backgroundColor: `rgba(${bgColor}, 0.2)`,
+    //       fill: true,
+    //       cubicInterpolationMode: "monotone",
+    //       tension: 2,
+    //     },
+    //   ];
+
+    //   this.chartInstance.update();
+    // },
+
     initChart() {
       if (this.chartInstance !== null) {
         this.chartInstance.destroy();
@@ -47,6 +82,7 @@ export default {
           ],
         },
         options: {
+          animation: false,
           responsive: true,
           elements: {
             line: {
@@ -84,6 +120,10 @@ export default {
   },
 
   watch: {
+    currentTheme() {
+      this.initChart();
+    },
+
     $props: {
       handler() {
         this.initChart();
