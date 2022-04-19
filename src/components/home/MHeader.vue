@@ -23,7 +23,7 @@
           <span class="material-icons-round" v-if="darkMode">
             dark_mode
           </span>
-          <span class="material-icons-round" v-else>light_mode</span>
+          <span class="material-icons-round" v-else>wb_sunny</span>
         </MButton>
         <router-link to="/login">
           <MButton>
@@ -73,7 +73,7 @@ export default {
         },
         {
           name: "orange",
-          color: "#ea9e74",
+          color: "#ffbb48",
         },
         {
           name: "pink",
@@ -111,7 +111,7 @@ export default {
   @apply rounded-t-none rounded-b-2xl;
 
   h1 {
-    @apply font-bold text-3xl;
+    @apply font-bold text-3xl text-mode-base;
     @apply mb-2.5 sm:mb-0;
   }
 
@@ -133,23 +133,8 @@ export default {
         @apply h-5 w-5;
         @apply rounded-full;
         @apply cursor-pointer;
-
-        &::after {
-          content: "";
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          background: transparent;
-          transition: all ease-in-out 0.2s;
-        }
-
-        &:hover {
-          &::after {
-            background: rgba(255, 255, 255, 0.2);
-          }
-        }
+        @apply transition-all;
+        @apply hover:opacity-80;
 
         &--active {
           @apply outline outline-gray-500/20 outline-4;

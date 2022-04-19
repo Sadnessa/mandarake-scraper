@@ -94,13 +94,13 @@ export default {
           @apply flex items-center;
 
           p {
-            @apply text-neutral-500;
+            @apply text-mode-secondary;
             @apply text-base uppercase;
           }
 
           .num {
             @apply text-lg;
-            @apply text-black;
+            @apply text-mode-base;
             @apply pl-2;
           }
         }
@@ -108,7 +108,7 @@ export default {
     }
 
     h1 {
-      @apply font-bold text-2xl;
+      @apply font-bold text-2xl text-mode-base;
     }
   }
 

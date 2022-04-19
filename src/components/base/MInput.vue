@@ -60,7 +60,7 @@ export default {
 
   .inpt {
     @apply flex;
-    @apply bg-neutral-300;
+    @apply bg-mode-input;
     @apply px-3 py-1.5 mb-1;
     @apply box-border rounded-lg;
     @apply cursor-text;

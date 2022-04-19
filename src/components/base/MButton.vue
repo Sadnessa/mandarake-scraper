@@ -69,7 +69,7 @@ export default {
   //types
   &--solid {
     @apply bg-skin-fill;
-    @apply text-skin-text-button;
+    @apply text-mode-text-button;
 
     &:not(.btn--disabled) {
       @apply hover:opacity-80;
@@ -77,12 +77,12 @@ export default {
   }
 
   &--flat {
-    @apply bg-skin-button-flat;
+    @apply bg-skin-fill bg-opacity-0;
     @apply text-skin-text-button-flat;
     @apply border-skin-button-flat;
 
     &:not(.btn--disabled) {
-      @apply hover:bg-skin-button-flat-hover;
+      @apply hover:bg-skin-fill hover:bg-opacity-20;
     }
   }
 

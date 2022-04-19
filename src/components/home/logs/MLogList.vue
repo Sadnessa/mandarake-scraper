@@ -34,7 +34,7 @@ export default {
   @apply grow;
 
   h1 {
-    @apply font-bold text-2xl;
+    @apply font-bold text-2xl text-mode-base;
     @apply py-3;
   }
 
@@ -56,12 +56,11 @@ export default {
       }
 
       .date {
-        @apply text-neutral-500;
-        @apply text-base uppercase;
+        @apply text-base uppercase text-mode-secondary;
       }
 
       .price {
-        @apply text-lg;
+        @apply text-lg text-mode-base;
       }
     }
   }

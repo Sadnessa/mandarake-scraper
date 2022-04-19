@@ -54,7 +54,7 @@ export default {
 }
 
 body {
-  @apply bg-neutral-200;
+  @apply bg-mode-bg;
 }
 
 .material-icons,

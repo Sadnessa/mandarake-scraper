@@ -54,7 +54,7 @@ export default {
   @apply py-5;
 
   h1 {
-    @apply font-bold text-3xl;
+    @apply font-bold text-3xl text-mode-base;
     @apply sm:mb-0 mb-2.5;
   }
 

@@ -90,13 +90,13 @@ export default {
   h1 {
     @apply border-b-2 border-dashed border-skin-button-fill;
     @apply mb-3 pb-2;
-    @apply font-bold text-lg text-center;
+    @apply font-bold text-lg text-center text-mode-base;
   }
 
   p {
     @apply font-semibold text-xs;
     @apply pb-1;
-    @apply text-neutral-500;
+    @apply text-mode-secondary;
   }
 
   .btns {

@@ -21,7 +21,7 @@ export default {
   @apply flex flex-col justify-center items-center;
 
   h1 {
-    @apply font-bold text-4xl;
+    @apply font-bold text-4xl text-mode-base;
     @apply mb-4;
   }
 }

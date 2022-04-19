@@ -68,11 +68,11 @@ export default {
       @apply my-2.5 mx-0.5;
 
       h1 {
-        @apply font-bold text-2xl;
+        @apply font-bold text-2xl text-mode-base;
       }
 
       p {
-        @apply text-neutral-500;
+        @apply text-mode-secondary;
         @apply text-base uppercase;
       }
     }
@@ -83,7 +83,7 @@ export default {
       @apply py-2;
 
       p {
-        @apply text-xl;
+        @apply text-xl text-mode-base;
       }
 
       .btns-col {

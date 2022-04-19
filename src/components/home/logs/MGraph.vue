@@ -40,7 +40,7 @@ export default {
   @apply w-full md:w-3/5;
 
   h1 {
-    @apply font-bold text-2xl;
+    @apply font-bold text-2xl text-mode-base;
     @apply py-3;
   }
 }

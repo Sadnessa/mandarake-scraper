@@ -7,7 +7,7 @@
 <style lang="scss" scoped>
 .card {
   @apply w-full;
-  @apply bg-white;
+  @apply bg-mode-card;
   @apply p-6;
   @apply shadow;
   @apply rounded-lg;
