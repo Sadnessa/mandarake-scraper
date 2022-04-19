@@ -33,11 +33,14 @@ export default {
       } else {
         document.querySelector("body").classList.remove('dark');
       }
+
+      localStorage.setItem("mode", JSON.stringify(newValue));
     }
   },
 
   mounted() {
     this.currentTheme = localStorage.getItem("themes");
+    this.darkMode = JSON.parse(localStorage.getItem("mode"));
   },
 };
 </script>
