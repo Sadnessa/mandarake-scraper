@@ -37,12 +37,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/mandarake-scraper/'),
   routes
 })
-
-// router.beforeEach((to, from, next) => {
-
-// })
 
 export default router
