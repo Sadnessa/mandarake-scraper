@@ -11,5 +11,6 @@
   @apply p-6;
   @apply shadow;
   @apply rounded-lg;
+  @apply transition-all duration-300;
 }
 </style>

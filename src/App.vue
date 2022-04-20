@@ -58,6 +58,7 @@ export default {
 
 body {
   @apply bg-mode-bg;
+  @apply transition-all duration-300;
 }
 
 .material-icons,
