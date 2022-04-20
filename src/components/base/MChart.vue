@@ -67,6 +67,10 @@ export default {
         "--color-fill"
       );
 
+      let textColor = getComputedStyle(this.$refs.chart).getPropertyValue(
+        "--color-text-secondary"
+      );
+
       this.chartInstance = new Chart(this.$refs.chart.getContext("2d"), {
         type: "line",
         data: {
@@ -104,9 +108,15 @@ export default {
           },
           scales: {
             x: {
+              ticks: {
+                color: textColor,
+              },
               display: true,
             },
             y: {
+              ticks: {
+                color: textColor,
+              },
               display: true,
             },
           },
