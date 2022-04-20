@@ -47,7 +47,6 @@ export default {
       }
       return {
         "inpt--error": this.v.$invalid && this.v.$dirty,
-        "inpt--good": !this.v.$error,
       };
     },
   },
@@ -94,11 +93,6 @@ export default {
     &:focus,
     &:focus-within {
       @apply outline-dashed outline-2 outline-skin-line;
-
-      //don't have any errors
-      &.inpt--good {
-        @apply bg-green-400/40;
-      }
     }
   }
 
