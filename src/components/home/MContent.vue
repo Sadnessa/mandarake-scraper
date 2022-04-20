@@ -24,15 +24,6 @@ export default {
   @apply container lg:px-36 px-2;
   @apply flex flex-col;
   @apply relative;
-
-  &:after {
-    content: "";
-    background-image: linear-gradient(to top, var(--color-bg), transparent);
-    @apply absolute left-0 right-0 bottom-0;
-    @apply w-full h-28;
-    @apply pointer-events-none;
-    @apply z-0;
-  }
 }
 
 //transition between pages
