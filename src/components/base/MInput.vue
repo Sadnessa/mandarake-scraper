@@ -73,14 +73,14 @@ export default {
       @apply flex items-center;
       @apply pr-2 mr-2;
       @apply select-none;
-      @apply text-neutral-500 text-lg;
+      @apply text-mode-secondary text-lg;
       @apply border-r-2 border-neutral-400;
     }
 
     input {
       @apply bg-transparent;
       @apply w-full py-1;
-      @apply font-medium text-sm;
+      @apply font-medium text-sm text-mode-base;
 
       &::placeholder {
         @apply font-bold text-mode-secondary;
