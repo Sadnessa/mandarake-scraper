@@ -63,6 +63,7 @@ export default {
     @apply px-3 py-1.5 mb-1;
     @apply box-border rounded-lg;
     @apply cursor-text;
+    @apply transition-colors duration-300;
 
     &.inpt--error {
       @apply bg-red-300/40;
@@ -82,7 +83,7 @@ export default {
       @apply font-medium text-sm;
 
       &::placeholder {
-        @apply font-bold text-neutral-500;
+        @apply font-bold text-mode-secondary;
       }
 
       &:focus {
