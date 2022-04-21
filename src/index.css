@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-themes {
-  :root {
+:root {
     --color-text-button-flat: #A855F7;
     --color-fill: 168, 85, 247; 
     --color-button-border: #A855F7;
@@ -50,10 +49,9 @@ themes {
     --color-button-flat-border: #E3ADB4;
     --color-outline: #e396a0;
   }
-}
 
-modes {
-  :root {
+
+:root {
     --color-text-base: #121718;
     --color-text-secondary: #6b686a;
     --color-text-button: #fafafc;
@@ -70,4 +68,3 @@ modes {
     --color-bg: #282b30;
     --color-input: #424549;
   }
-}
