@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer themes {
+themes {
   :root {
     --color-text-button-flat: #A855F7;
     --color-fill: 168, 85, 247; 
@@ -52,7 +52,7 @@
   }
 }
 
-@layer modes {
+modes {
   :root {
     --color-text-base: #121718;
     --color-text-secondary: #6b686a;
