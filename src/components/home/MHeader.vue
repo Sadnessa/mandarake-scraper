@@ -16,17 +16,25 @@
               ></div>
             </div>
           </transition>
+
           <MButton rounded @click="onShowThemes">
-            <span class="material-icons-round" v-if="doShowThemes">
-              chevron_right
-            </span>
-            <span class="material-icons-round" v-else> color_lens </span>
+            <transition name="fade" mode="out-in">
+              <span class="material-icons-round" v-if="doShowThemes">
+                chevron_right
+              </span>
+              <span class="material-icons-round" v-else>
+                color_lens
+              </span>
+              </transition>
           </MButton>
+          
           <MButton rounded @click="onDarkMode">
+            <transition name="fade" mode="out-in">
             <span class="material-icons-round" v-if="darkMode">
               dark_mode
             </span>
             <span class="material-icons-round" v-else>wb_sunny</span>
+            </transition>
           </MButton>
         </div>
         <router-link to="/login">
@@ -109,10 +117,14 @@ export default {
 
 <style lang="scss" scoped>
 
-.circles-enter-from, .circles-leave-to, .themes__item {
+.circles-enter-from,
+.circles-leave-to,
+.themes__item {
   opacity: 0;
 }
-.circles-enter-active, .circles-leave-active, .themes__item {
+.circles-enter-active,
+.circles-leave-active,
+.themes__item {
   transition: all 0.3s;
 }
 
