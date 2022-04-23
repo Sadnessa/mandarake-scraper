@@ -4,36 +4,38 @@
       <h1>Welcome, user</h1>
       <div class="btns-col">
         <div class="btns-col__themes">
-          <transition name="circles"
-            ><div class="themes" v-if="doShowThemes">
-              <div
-                class="themes__item"
-                v-for="theme in themes"
-                :key="theme.name"
-                :style="{ background: theme.color }"
-                :class="{ 'themes__item--active': theme.name == currentTheme }"
-                @click="onSelectTheme(theme.name)"
-              ></div>
-            </div>
-          </transition>
+          <div class="palette">
+            <transition name="circles">
+              <div class="themes" v-if="doShowThemes">
+                <div
+                  class="themes__item"
+                  v-for="theme in themes"
+                  :key="theme.name"
+                  :style="{ background: theme.color }"
+                  :class="{
+                    'themes__item--active': theme.name == currentTheme,
+                  }"
+                  @click="onSelectTheme(theme.name)"
+                ></div>
+              </div>
+            </transition>
 
-          <MButton rounded @click="onShowThemes">
-            <transition name="fade" mode="out-in">
-              <span class="material-icons-round" v-if="doShowThemes">
-                chevron_right
-              </span>
-              <span class="material-icons-round" v-else>
-                color_lens
-              </span>
+            <MButton rounded @click="onShowThemes">
+              <transition name="fade" mode="out-in">
+                <span class="material-icons-round" v-if="doShowThemes">
+                  chevron_right
+                </span>
+                <span class="material-icons-round" v-else> color_lens </span>
               </transition>
-          </MButton>
-          
+            </MButton>
+          </div>
+
           <MButton rounded @click="onDarkMode">
             <transition name="fade" mode="out-in">
-            <span class="material-icons-round" v-if="darkMode">
-              dark_mode
-            </span>
-            <span class="material-icons-round" v-else>wb_sunny</span>
+              <span class="material-icons-round" v-if="darkMode">
+                dark_mode
+              </span>
+              <span class="material-icons-round" v-else>wb_sunny</span>
             </transition>
           </MButton>
         </div>
@@ -116,7 +118,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .circles-enter-from,
 .circles-leave-to,
 .themes__item {
@@ -153,19 +154,38 @@ export default {
     &__themes {
       @apply flex items-center;
 
-      .themes {
-        @apply flex;
+      .palette {
+        @apply flex items-center;
+        @apply relative;
 
-        &__item {
-          @apply h-5 w-5;
-          @apply rounded-full;
-          @apply cursor-pointer;
-          @apply transition-all;
-          @apply opacity-100;
-          @apply hover:opacity-80;
+        .themes {
+          @apply flex md:flex-row flex-col;
+          @apply md:static absolute;
+          @apply top-10;
+          @apply z-10;
+          @apply md:py-0 py-2 md:px-0 px-2;
+          @apply bg-mode-card;
+          @apply transition-all duration-300;
+          @apply md:shadow-none shadow;
+          @apply rounded;
 
-          &--active {
-            @apply outline outline-gray-500/20 outline-4;
+          &__item {
+            @apply h-5 w-5;
+            @apply rounded-full;
+            @apply cursor-pointer;
+            @apply transition-all;
+            @apply opacity-100;
+            @apply hover:opacity-80;
+            @apply md:mb-0 mb-2.5;
+            @apply md:mr-2.5 mr-0;
+
+            &:last-child {
+              @apply mb-0;
+            }
+
+            &--active {
+              @apply outline outline-gray-500/20 outline-4;
+            }
           }
         }
       }
