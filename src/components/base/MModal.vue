@@ -12,7 +12,7 @@
             <MButton @click="onConfirm">Confirm</MButton>
           </div>
         </MCard>
-        <div class="modal__overlay"></div>
+        <div class="modal__overlay" @click="closeModal"></div>
       </div>
     </Transition>
   </Teleport>
@@ -63,17 +63,21 @@ export default {
         this.resolve = resolve;
       });
     },
+
+    closeModal() {
+      this.$emit("update:modelValue", false);
+    },
   },
 
   watch: {
     modelValue(newValue) {
       if (newValue) {
-        document.querySelector('#app').style.filter = 'blur(0.3rem)';
+        document.querySelector("#app").style.filter = "blur(0.3rem)";
       } else {
-        document.querySelector('#app').style.filter = 'blur(0rem)'
+        document.querySelector("#app").style.filter = "blur(0rem)";
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
